@@ -1,0 +1,19 @@
+# Binarios y objetos
+bin/
+*.o
+*.out
+box
+meeseeks_box
+
+# Temporales
+*.tmp
+*.log
+*~
+
+# IPC / shm temporales
+/tmp/meeseeks*
+
+# VSCode / OS
+.vscode/
+.DS_Store
+Thumbs.db
