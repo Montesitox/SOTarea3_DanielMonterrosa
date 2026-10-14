@@ -165,11 +165,11 @@ int main(int argc, char *argv[]) {
         }
 
         if (tipo == REQ_TEXTO)
-            printf("Solicitud textual (ej. 'Quiero un café francés'): ");
+            printf("Solicitud: ");
         else if (tipo == REQ_CALCULO)
-            printf("Expresión (ej. '2 + 3 * 4', '5 > 3 && 1'): ");
+            printf("Expresión: ");
         else
-            printf("Comando externo (ej. 'ls -l', 'sleep 2'): ");
+            printf("Comando: ");
         fflush(stdout);
         if (!fgets(linea, sizeof(linea), stdin)) break;
         trim_newline(linea);

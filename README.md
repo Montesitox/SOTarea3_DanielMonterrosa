@@ -43,13 +43,13 @@ make
 ## Uso interactivo
 ```
 Tipo [A/B/C o salir]: A
-Solicitud textual: Quiero un café francés
+Solicitud: Quiero un café francés
 Dificultad ... (según -m 1|2)
 ...
 Tipo [A/B/C o salir]: B
 Expresión: 2 + 3 * 4
 Tipo [A/B/C o salir]: C
-Comando externo: ls -l /tmp
+Comando: ls -l /tmp
 Tipo [A/B/C o salir]: chao   -> informe final
 ```
 

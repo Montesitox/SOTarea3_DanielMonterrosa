@@ -37,7 +37,7 @@ static void on_sigterm(int sig) {
 }
 
 void meeseeks_saludar(pid_t pid, pid_t ppid, int N, int i) {
-    printf("[pid=%d ppid=%d] Hi, I'm Mr. Meeseeks! Look at Meeeee. (%d, %d, %d, %d)\n",
+    printf("\n[pid=%d ppid=%d] Hi, I'm Mr. Meeseeks! Look at Meeeee. (%d, %d, %d, %d)\n",
            (int)pid, (int)ppid, (int)pid, (int)ppid, N, i);
     fflush(stdout);
 }
@@ -87,7 +87,6 @@ static void meeseeks_nodo(solicitud_t sol, int N, int i, int fd_down, int fd_up)
         if (rc == 0) {
             res.exito = 1;
             snprintf(res.detalle, sizeof(res.detalle), "cálculo OK: %s = %s", sol.texto, out);
-            log_msg("Solicitud completada: %s. ¡Gracias por servirle!", res.detalle);
         } else {
             res.exito = 0;
             snprintf(res.detalle, sizeof(res.detalle), "%s", out);
@@ -96,7 +95,7 @@ static void meeseeks_nodo(solicitud_t sol, int N, int i, int fd_down, int fd_up)
         res.sim_time = 0.0;
         if (fd_up >= 0) { ipc_pipe_enviar(fd_up, &res, sizeof(res)); close(fd_up); }
         meeseeks_despedirse(pid, ppid, N, i,
-            res.exito ? "agradece haberle servido" : "falló el cálculo");
+            res.exito ? "solicitud completada, agradece haberle servido" : "falló el cálculo");
         _exit(res.exito ? 0 : 1);
     }
 
@@ -110,7 +109,6 @@ static void meeseeks_nodo(solicitud_t sol, int N, int i, int fd_down, int fd_up)
             res.exito = 1;
             snprintf(res.detalle, sizeof(res.detalle),
                      "programa OK exit=0 en %.3fs: %s", dur, sol.texto);
-            log_msg("Programa terminó con éxito (exit 0, %.3fs). ¡Gracias!", dur);
         } else {
             res.exito = 0;
             snprintf(res.detalle, sizeof(res.detalle),
@@ -120,7 +118,7 @@ static void meeseeks_nodo(solicitud_t sol, int N, int i, int fd_down, int fd_up)
         res.sim_time = 0.0; /* ejecución externa es tiempo real, no simulado */
         if (fd_up >= 0) { ipc_pipe_enviar(fd_up, &res, sizeof(res)); close(fd_up); }
         meeseeks_despedirse(pid, ppid, N, i,
-            res.exito ? "agradece haberle servido" : "el programa falló");
+            res.exito ? "solicitud completada, agradece haberle servido" : "el programa falló");
         _exit(res.exito ? 0 : 1);
     }
 
@@ -144,9 +142,8 @@ static void meeseeks_nodo(solicitud_t sol, int N, int i, int fd_down, int fd_up)
         snprintf(res.detalle, sizeof(res.detalle),
                  "solicitud '%s' completada por Meeseeks (%d,%d,%d,%d)",
                  sol.texto, (int)pid, (int)ppid, N, i);
-        log_msg("¡Lo logré! Solicitud completada. ¡Gracias por servirle!");
         if (fd_up >= 0) { ipc_pipe_enviar(fd_up, &res, sizeof(res)); close(fd_up); }
-        meeseeks_despedirse(pid, ppid, N, i, "agradece haberle servido");
+        meeseeks_despedirse(pid, ppid, N, i, "solicitud completada, agradece haberle servido");
         _exit(0);
     }
 
