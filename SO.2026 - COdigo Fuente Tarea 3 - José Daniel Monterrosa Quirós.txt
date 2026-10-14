@@ -1,0 +1,1436 @@
+===== Makefile =====
+CC = gcc
+CFLAGS = -Wall -Wextra -g -std=c11 -D_POSIX_C_SOURCE=200809L -Iinclude -pthread
+LDFLAGS = -pthread -lm -lrt
+SRC = src/box.c src/meeseeks.c src/caso_a_texto.c src/caso_b_calculo.c src/caso_c_externo.c src/ipc.c src/utils.c
+BIN = bin/box
+
+all: $(BIN)
+
+$(BIN): $(SRC)
+	mkdir -p bin
+	$(CC) $(CFLAGS) -o $@ $(SRC) $(LDFLAGS)
+
+clean:
+	rm -f src/*.o $(BIN)
+
+.PHONY: all clean
+
+===== include/caso_a.h =====
+/*
+ * SO-T3-DanielMonterrosa
+ * caso_a.h - Caso A: solicitudes textuales con dificultad 0-100
+ *
+ * Reglas:
+ *  85.01-100  -> 1 Meeseeks resuelve solo.
+ *  45.01-85   -> crea 2 hijos (N+1, i=1,2).
+ *   0   -45   -> crea 5 hijos (N+1, i=1..5).
+ *   0         -> imposible: plan de contingencia (ver docs/diseno.md),
+ *                NO solución, límite de niveles para evitar fork-bomb.
+ * Dificultad se diluye (aging) en cada nivel para tareas != 0.
+ */
+#ifndef CASO_A_H
+#define CASO_A_H
+
+#include "common.h"
+
+float caso_a_obtener_dificultad(const char *solicitud);
+double caso_a_tiempo_simulacion(void);
+int caso_a_intentar_resolver(float dificultad);
+int caso_a_num_hijos(float dificultad);
+float caso_a_diluir(float dificultad, int num_hijos);
+
+#endif
+
+===== include/caso_b.h =====
+/*
+ * SO-T3-DanielMonterrosa
+ * caso_b.h - Caso B: cálculo aritmético/lógico en 1 solo Meeseeks
+ */
+#ifndef CASO_B_H
+#define CASO_B_H
+
+/* Evalúa expr (ej "2 + 3 * 4", "10 % 3", "5 > 3 && 1").
+ * Retorna 0 ok, -1 error. Resultado como string en out. */
+int caso_b_evaluar(const char *expr, char *out, unsigned long out_len);
+
+#endif
+
+===== include/caso_c.h =====
+/*
+ * SO-T3-DanielMonterrosa
+ * caso_c.h - Caso C: ejecutar programa externo y ver exit code
+ * Éxito = exit 0. Incluye medición de tiempo real de ejecución.
+ */
+#ifndef CASO_C_H
+#define CASO_C_H
+
+/* Ejecuta cmd vía fork+exec+wait. Retorna exit code en *exit_code.
+ * Retorno 0 si se pudo esperar al hijo, -1 error. */
+int caso_c_ejecutar(const char *cmd, int *exit_code, double *duracion_seg);
+
+#endif
+
+===== include/common.h =====
+/*
+ * SO-T3-DanielMonterrosa
+ * common.h - Definiciones compartidas Box / Meeseeks
+ *
+ * Contiene: tipos de solicitud (A/B/C), struct de resultado para
+ * el informe final, y configuración global (caos planetario).
+ *
+ * Autor: Daniel Monterrosa - Sistemas Operativos Tarea #3 Mr. Meeseeks
+ * Curso: Sistemas Operativos, Prof. M.Sc. Esteban Arias-Méndez
+ */
+#ifndef COMMON_H
+#define COMMON_H
+
+#include <time.h>
+#include <sys/types.h>
+
+/* Tipos de solicitud */
+typedef enum {
+    REQ_TEXTO    = 'A',  /* Caso A: "Quiero..." -> simulación dificultad 0-100 */
+    REQ_CALCULO  = 'B',  /* Caso B: operación aritmética/lógica */
+    REQ_PROGRAMA = 'C'   /* Caso C: ejecutar programa externo, ver exit code */
+} req_tipo_t;
+
+/* Límites de contingencia (dificultad 0 = imposible, evita fork-bomb) */
+#define MEESEEKS_MAX_NIVELES  6    /* profundidad máxima de delegación */
+#define MEESEEKS_MAX_TOTAL    200  /* tope global de Meeseeks por solicitud */
+#define MEESEEKS_MAX_HIJOS    5
+#define HIST_MAX              100
+
+/* Una solicitud hecha al Box */
+typedef struct {
+    int id;                 /* consecutivo 1..N */
+    req_tipo_t tipo;        /* A, B o C */
+    char texto[512];        /* solicitud original del usuario */
+    float dificultad;       /* 0-100, solo Caso A (otros: -1) */
+    struct timespec t_inicio;
+    struct timespec t_fin;
+    double wall_seg;        /* tiempo pared total fork+wait */
+    double duracion_seg;    /* tiempo real = wall - sim (sin sleeps simulación) */
+    double sim_seg;         /* tiempo simulado acumulado reportado por Meeseeks */
+    int exito;              /* 1 = completada, 0 = no */
+    int num_meeseeks;       /* cuántos Meeseeks se crearon */
+    pid_t meeseeks_ganador_pid;
+    pid_t meeseeks_ganador_ppid;
+    int ganador_N, ganador_i;
+    char detalle[256];
+} solicitud_t;
+
+/* Resultado que un Meeseeks envía a su padre por pipe (IPC, no var global) */
+typedef struct {
+    int exito;              /* 1 éxito, 0 fracaso */
+    pid_t ganador_pid;
+    pid_t ganador_ppid;
+    int ganador_N;
+    int ganador_i;
+    double sim_time;        /* sleep simulado acumulado del subárbol */
+    char detalle[256];
+} meeseeks_result_t;
+
+/* Config global (seteable por argv) */
+typedef struct {
+    int caos_timeout_seg;   /* default 300 (5 min) */
+    int dificultad_modo;    /* 1 = pregunta usuario, 2 = aleatoria */
+    float sim_min_seg;      /* default 0.5 */
+    float sim_max_seg;      /* default 5.0 */
+} config_t;
+
+extern config_t g_config;
+
+#endif
+
+===== include/ipc.h =====
+/*
+ * SO-T3-DanielMonterrosa
+ * ipc.h - Pipes, memoria compartida y semáforos
+ *
+ * - Pipes: mensaje privado con la solicitud a cada Meeseeks.
+ *   Prohibido usar variable global para mensajes.
+ * - Shm + sem (POSIX): contador global de niveles/instancias y nº Meeseeks.
+ */
+#ifndef IPC_H
+#define IPC_H
+
+#include <stddef.h>
+
+typedef struct {
+    int total_meeseeks;
+    int max_N;
+} contadores_t;
+
+#define IPC_SHM_NAME "/meeseeks_cont_so3"
+#define IPC_SEM_NAME "/meeseeks_sem_so3"
+
+int ipc_init(void);
+void ipc_cleanup(void);
+void ipc_contador_nuevo_meeseeks(int N);
+int ipc_contador_total(void);
+int ipc_contador_maxN(void);
+
+/* Helpers de pipe con lectura/escritura exacta (manejan EINTR y parciales) */
+int ipc_pipe_crear(int fds[2]);
+int ipc_pipe_enviar(int fd, const void *buf, size_t len);
+int ipc_pipe_recibir(int fd, void *buf, size_t len);
+
+#endif
+
+===== include/meeseeks.h =====
+/*
+ * SO-T3-DanielMonterrosa
+ * meeseeks.h - Ciclo de vida de un Mr. Meeseeks
+ */
+#ifndef MEESEEKS_H
+#define MEESEEKS_H
+
+#include <sys/types.h>
+#include "common.h"
+
+/* Crea (fork) el primer Meeseeks Nivel N=1, instancia i=1 para una solicitud.
+ * fds_padre[0] = fd escritura solicitud (Box->Meeseeks),
+ * fds_padre[1] = fd lectura resultado (Meeseeks->Box).
+ * Retorna PID del hijo en el padre, -1 en error.
+ * En el hijo NO retorna (ejecuta nodo y _exit). */
+pid_t meeseeks_crear_inicial(const solicitud_t *sol, int fds_padre[2]);
+
+/* Código que ejecuta todo proceso Meeseeks (mismo binario).
+ * Si pipe_lectura_fd >= 0, la solicitud se lee del pipe (mensaje privado);
+ * si no, se usa 'sol' tal cual. No retorna (termina con _exit). */
+void meeseeks_ejecutar(solicitud_t sol, int N, int i, int pipe_lectura_fd);
+
+void meeseeks_saludar(pid_t pid, pid_t ppid, int N, int i);
+void meeseeks_despedirse(pid_t pid, pid_t ppid, int N, int i, const char *motivo);
+
+#endif
+
+===== include/utils.h =====
+/*
+ * SO-T3-DanielMonterrosa
+ * utils.h - Tiempos reales, aleatorios, logging con pid/ppid
+ */
+#ifndef UTILS_H
+#define UTILS_H
+
+#include <time.h>
+
+double timespec_diff_seg(struct timespec a, struct timespec b);
+float rand_float(float min, float max);
+int rand_int(int min, int max);
+void log_msg(const char *fmt, ...);
+void trim_newline(char *s);
+int es_despedida(const char *s);
+
+#endif
+
+===== src/box.c =====
+/*
+ * SO-T3-DanielMonterrosa
+ * box.c - Programa Box (main): loop de solicitudes, informe final,
+ *         timeout de caos planetario.
+ *
+ * Uso: ./bin/box [-t timeout_seg] [-m 1|2] [--sim-min X] [--sim-max Y]
+ *   -t: segundos para caos planetario (default 300, mínimo sugerido 300)
+ *   -m: 1 = preguntar dificultad al usuario, 2 = aleatoria (default 2)
+ *
+ * Flujo:
+ *  1. ipc_init (shm+sem), srand, alarma de caos.
+ *  2. Loop: pide tipo A/B/C hasta despedida (chao/adios/bye/salir).
+ *  3. Por solicitud: clock_gettime, fork Meeseeks N=1,i=1 via pipes,
+ *     espera resultado por pipe, clock_gettime (resta sim para tiempo real).
+ *  4. Informe final + ipc_cleanup + matar hijo pendiente si hubo caos.
+ */
+#define _POSIX_C_SOURCE 200809L
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <signal.h>
+#include <errno.h>
+#include <time.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include "common.h"
+#include "meeseeks.h"
+#include "caso_a.h"
+#include "ipc.h"
+#include "utils.h"
+
+config_t g_config = {
+    .caos_timeout_seg = 300,
+    .dificultad_modo = 2,
+    .sim_min_seg = 0.5f,
+    .sim_max_seg = 5.0f
+};
+
+static volatile sig_atomic_t g_caos = 0;
+static volatile pid_t g_hijo_actual = -1;
+
+static void on_caos(int sig) {
+    (void)sig;
+    g_caos = 1;
+    /* Matar subárbol completo del Meeseeks inicial (es líder de grupo) */
+    if (g_hijo_actual > 0) {
+        kill(-g_hijo_actual, SIGTERM);
+    }
+}
+
+static void on_int(int sig) {
+    (void)sig;
+    g_caos = 1;
+    if (g_hijo_actual > 0) kill(-g_hijo_actual, SIGTERM);
+}
+
+static void uso(const char *prog) {
+    printf("Uso: %s [-t timeout_seg] [-m 1|2] [--sim-min X] [--sim-max Y]\n", prog);
+    printf("  -t N      caos planetario en N seg (default 300)\n");
+    printf("  -m 1|2    1=preguntar dificultad, 2=aleatoria (default 2)\n");
+}
+
+static void imprimir_informe(solicitud_t *hist, int n) {
+    printf("\n================ INFORME FINAL DEL BOX ================\n");
+    printf("Tareas solicitadas: %d\n", n);
+    int ok = 0, fail = 0;
+    for (int k = 0; k < n; k++) {
+        if (hist[k].exito) ok++; else fail++;
+    }
+    printf("Completadas: %d | No completadas: %d\n", ok, fail);
+    printf("Meeseeks totales creados: %d | Nivel máximo: %d\n",
+           ipc_contador_total(), ipc_contador_maxN());
+    printf("--------------------------------------------------------\n");
+    for (int k = 0; k < n; k++) {
+        printf("#%d [%c] '%s'\n", hist[k].id, (char)hist[k].tipo, hist[k].texto);
+        if (hist[k].tipo == REQ_TEXTO)
+            printf("    dificultad=%.2f\n", hist[k].dificultad);
+        printf("    resultado=%s | wall=%.3fs sim=%.3fs real=%.3fs (sin sim)\n",
+               hist[k].exito ? "ÉXITO" : "FRACASO",
+               hist[k].wall_seg, hist[k].sim_seg, hist[k].duracion_seg);
+        printf("    meeseeks=%d", hist[k].num_meeseeks);
+        if (hist[k].exito)
+            printf(" | ganador pid=%d ppid=%d N=%d i=%d",
+                   (int)hist[k].meeseeks_ganador_pid,
+                   (int)hist[k].meeseeks_ganador_ppid,
+                   hist[k].ganador_N, hist[k].ganador_i);
+        printf("\n    detalle: %s\n", hist[k].detalle);
+    }
+    printf("========================================================\n");
+}
+
+int main(int argc, char *argv[]) {
+    /* ---- argv ---- */
+    for (int a = 1; a < argc; a++) {
+        if (strcmp(argv[a], "-t") == 0 && a + 1 < argc) {
+            g_config.caos_timeout_seg = atoi(argv[++a]);
+        } else if (strcmp(argv[a], "-m") == 0 && a + 1 < argc) {
+            g_config.dificultad_modo = atoi(argv[++a]);
+            if (g_config.dificultad_modo != 1) g_config.dificultad_modo = 2;
+        } else if (strcmp(argv[a], "--sim-min") == 0 && a + 1 < argc) {
+            g_config.sim_min_seg = (float)atof(argv[++a]);
+        } else if (strcmp(argv[a], "--sim-max") == 0 && a + 1 < argc) {
+            g_config.sim_max_seg = (float)atof(argv[++a]);
+        } else if (strcmp(argv[a], "-h") == 0 || strcmp(argv[a], "--help") == 0) {
+            uso(argv[0]);
+            return 0;
+        } else {
+            printf("Opción desconocida: %s\n", argv[a]);
+            uso(argv[0]);
+            return 1;
+        }
+    }
+    if (g_config.caos_timeout_seg < 10) {
+        printf("Aviso: timeout muy bajo (%d s). Se recomienda >= 300.\n",
+               g_config.caos_timeout_seg);
+    }
+
+    srand((unsigned)(getpid() + time(NULL)));
+    setvbuf(stdout, NULL, _IOLBF, 0); /* línea a línea: evita duplicados tras fork */
+
+    if (ipc_init() < 0) {
+        fprintf(stderr, "Error inicializando IPC\n");
+        return 1;
+    }
+
+    /* ---- caos planetario: alarma global ---- */
+    struct sigaction sa;
+    memset(&sa, 0, sizeof(sa));
+    sa.sa_handler = on_caos;
+    sigaction(SIGALRM, &sa, NULL);
+    sa.sa_handler = on_int;
+    sigaction(SIGINT, &sa, NULL);
+    alarm((unsigned)g_config.caos_timeout_seg);
+
+    printf("=== BOX Mr. Meeseeks ===\n");
+    printf("Pida solicitudes. Tipos: A=texto, B=cálculo, C=programa.\n");
+    printf("Para salir escriba: chao / adios / bye / salir\n");
+    printf("Caos planetario en %d s. Dificultad modo %d. Sim [%.1f, %.1f]s.\n\n",
+           g_config.caos_timeout_seg, g_config.dificultad_modo,
+           g_config.sim_min_seg, g_config.sim_max_seg);
+
+    solicitud_t hist[HIST_MAX];
+    int n_hist = 0;
+    int next_id = 1;
+    char linea[600];
+
+    while (!g_caos) {
+        printf("\n--- Solicitud #%d ---\n", next_id);
+        printf("Tipo [A/B/C o salir]: ");
+        fflush(stdout);
+        if (!fgets(linea, sizeof(linea), stdin)) break;
+        trim_newline(linea);
+        if (linea[0] == '\0') continue;
+        if (es_despedida(linea)) break;
+
+        req_tipo_t tipo;
+        char c = linea[0];
+        if (c == 'a' || c == 'A') tipo = REQ_TEXTO;
+        else if (c == 'b' || c == 'B') tipo = REQ_CALCULO;
+        else if (c == 'c' || c == 'C') tipo = REQ_PROGRAMA;
+        else {
+            printf("Tipo inválido. Use A, B, C o despedida.\n");
+            continue;
+        }
+
+        if (tipo == REQ_TEXTO)
+            printf("Solicitud: ");
+        else if (tipo == REQ_CALCULO)
+            printf("Expresión: ");
+        else
+            printf("Comando: ");
+        fflush(stdout);
+        if (!fgets(linea, sizeof(linea), stdin)) break;
+        trim_newline(linea);
+        if (es_despedida(linea)) break;
+        if (linea[0] == '\0') { printf("Solicitud vacía, intente de nuevo.\n"); continue; }
+
+        if (n_hist >= HIST_MAX) {
+            printf("Historial lleno (%d). Cerrando Box.\n", HIST_MAX);
+            break;
+        }
+
+        solicitud_t sol;
+        memset(&sol, 0, sizeof(sol));
+        sol.id = next_id++;
+        sol.tipo = tipo;
+        strncpy(sol.texto, linea, sizeof(sol.texto) - 1);
+        sol.dificultad = -1;
+
+        if (tipo == REQ_TEXTO) {
+            sol.dificultad = caso_a_obtener_dificultad(sol.texto);
+            printf("Box: dificultad asignada = %.2f\n", sol.dificultad);
+        }
+
+        /* ---- crear Meeseeks inicial N=1,i=1 via fork+pipe ---- */
+        clock_gettime(CLOCK_MONOTONIC, &sol.t_inicio);
+        int total_antes = ipc_contador_total();
+        fflush(stdout); /* vaciar buffer antes del fork (evita líneas duplicadas) */
+
+        int fds[2] = {-1, -1};
+        pid_t hijo = meeseeks_crear_inicial(&sol, fds);
+        if (hijo < 0) {
+            printf("Box: no pude crear al Meeseeks (fork falló).\n");
+            continue;
+        }
+        g_hijo_actual = hijo;
+        printf("Box: creé a Mr. Meeseeks pid=%d para '%s'\n", (int)hijo, sol.texto);
+
+        /* Enviar solicitud por mensaje privado via pipe (no var global) */
+        if (ipc_pipe_enviar(fds[0], &sol, sizeof(sol)) < 0)
+            printf("Box: aviso, fallo enviando solicitud por pipe.\n");
+        close(fds[0]);
+
+        /* Esperar resultado por pipe + wait */
+        meeseeks_result_t res;
+        memset(&res, 0, sizeof(res));
+        int got = (ipc_pipe_recibir(fds[1], &res, sizeof(res)) == 0);
+        close(fds[1]);
+
+        int st = 0;
+        while (waitpid(hijo, &st, 0) < 0 && errno == EINTR) {
+            if (g_caos) break;
+        }
+        g_hijo_actual = -1;
+        clock_gettime(CLOCK_MONOTONIC, &sol.t_fin);
+
+        sol.wall_seg = timespec_diff_seg(sol.t_inicio, sol.t_fin);
+        sol.sim_seg = got ? res.sim_time : 0.0;
+        sol.duracion_seg = sol.wall_seg - sol.sim_seg; /* real sin simulación */
+        if (sol.duracion_seg < 0) sol.duracion_seg = 0;
+        sol.num_meeseeks = ipc_contador_total() - total_antes;
+        if (sol.num_meeseeks < 1) sol.num_meeseeks = 1;
+
+        if (g_caos) {
+            sol.exito = 0;
+            snprintf(sol.detalle, sizeof(sol.detalle),
+                     "interrumpida por caos planetario");
+            printf("\n¡CAOS PLANETARIO! Tiempo máximo (%d s) agotado.\n",
+                   g_config.caos_timeout_seg);
+            hist[n_hist++] = sol;
+            break;
+        }
+
+        if (got) {
+            sol.exito = res.exito;
+            sol.meeseeks_ganador_pid = res.ganador_pid;
+            sol.meeseeks_ganador_ppid = res.ganador_ppid;
+            sol.ganador_N = res.ganador_N;
+            sol.ganador_i = res.ganador_i;
+            strncpy(sol.detalle, res.detalle, sizeof(sol.detalle) - 1);
+        } else {
+            sol.exito = (WIFEXITED(st) && WEXITSTATUS(st) == 0);
+            snprintf(sol.detalle, sizeof(sol.detalle),
+                     "sin mensaje por pipe (exit %d)", WIFEXITED(st) ? WEXITSTATUS(st) : -1);
+            sol.meeseeks_ganador_pid = hijo;
+            sol.ganador_N = 1; sol.ganador_i = 1;
+        }
+
+        if (sol.exito) {
+            printf("Box al usuario: ¡Solicitud #%d COMPLETADA! %s\n", sol.id, sol.detalle);
+            printf("  Resuelta por Meeseeks pid=%d ppid=%d N=%d i=%d\n",
+                   (int)sol.meeseeks_ganador_pid, (int)sol.meeseeks_ganador_ppid,
+                   sol.ganador_N, sol.ganador_i);
+        } else {
+            printf("Box al usuario: Solicitud #%d NO se pudo completar. %s\n",
+                   sol.id, sol.detalle);
+        }
+        printf("  Tiempos: wall=%.3fs sim=%.3fs real=%.3fs | Meeseeks usados: %d\n",
+               sol.wall_seg, sol.sim_seg, sol.duracion_seg, sol.num_meeseeks);
+
+        hist[n_hist++] = sol;
+    }
+
+    alarm(0);
+    /* Si quedó hijo vivo (caos), asegurar terminación */
+    if (g_hijo_actual > 0) {
+        kill(-g_hijo_actual, SIGTERM);
+        sleep(1);
+        kill(-g_hijo_actual, SIGKILL);
+        while (waitpid(-1, NULL, WNOHANG) > 0) {}
+    }
+
+    imprimir_informe(hist, n_hist);
+    ipc_cleanup();
+    printf("Box terminado. ¡Adiós!\n");
+    return 0;
+}
+
+===== src/caso_a_texto.c =====
+/*
+ * SO-T3-DanielMonterrosa
+ * caso_a_texto.c - Dificultad, simulación y resolución probabilística.
+ *
+ * Idea creativa (estilo Meeseeks): cada Meeseeks apuesta a ciegas con
+ * probabilidad p = dificultad/100 de "¡Ya sé cómo hacerlo!".
+ *  - Si gana la apuesta -> resuelve solo, agradece y desaparece.
+ *  - Si pierde -> grita "¡Necesito ayuda!" y abre la caja otra vez:
+ *      0-45    -> 5 hijos (multitud del video), 45.01-85 -> 2 hijos.
+ *  - Aging: la dificultad se diluye entre hijos para que la tarea se
+ *    simplifique: hija = 100 - (100 - padre)/(hijos+1) + pequeño azar.
+ *    Así converge a >85 en 1-2 niveles y evita explosión.
+ *  - Dificultad 0 (imposible): nunca resuelve; contingencia con
+ *    MEESEEKS_MAX_NIVELES y MEESEEKS_MAX_TOTAL (ver docs/diseno.md).
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "caso_a.h"
+#include "utils.h"
+#include "common.h"
+
+extern config_t g_config;
+
+float caso_a_obtener_dificultad(const char *solicitud) {
+    (void)solicitud;
+    if (g_config.dificultad_modo == 1) {
+        /* Caso 1: consultar al usuario */
+        char buf[64];
+        float d = -1;
+        while (d < 0 || d > 100) {
+            printf("Dificultad de la solicitud [0=imposible .. 100=muy fácil]: ");
+            fflush(stdout);
+            if (!fgets(buf, sizeof(buf), stdin)) return 50.0f;
+            d = (float)atof(buf);
+            if (d < 0 || d > 100) printf("Valor inválido, intente 0-100.\n");
+        }
+        return d;
+    }
+    /* Caso 2: suerte del Meeseeks, uniforme 0-100.
+     * Distribución uniforme U(0,100): cada dificultad equiprobable. */
+    return rand_float(0.0f, 100.0f);
+}
+
+double caso_a_tiempo_simulacion(void) {
+    float lo = g_config.sim_min_seg, hi = g_config.sim_max_seg;
+    if (lo < 0) lo = 0.5f;
+    if (hi < lo) hi = lo;
+    return (double)rand_float(lo, hi);
+}
+
+int caso_a_intentar_resolver(float dificultad) {
+    if (dificultad <= 0.0f) return 0; /* imposible: jamás resuelve */
+    if (dificultad >= 100.0f) return 1;
+    /* Apuesta probabilística: éxito con prob. dificultad/100 */
+    float tiro = rand_float(0.0f, 100.0f);
+    return tiro < dificultad ? 1 : 0;
+}
+
+int caso_a_num_hijos(float dificultad) {
+    if (dificultad > 85.0f) return 0;   /* 85.01-100: 1 solo lo logra */
+    if (dificultad > 45.0f) return 2;   /* 45.01-85: 2 hijos N+1, i=1,2 */
+    return 5;                            /* 0-45: 5 hijos N+1, i=1..5 */
+}
+
+float caso_a_diluir(float dificultad, int num_hijos) {
+    if (dificultad <= 0.0f) return 0.0f; /* lo imposible no se diluye */
+    if (num_hijos <= 0) return dificultad;
+    /* Aging: hija = 100 - (100-padre)/(hijos+1), + jitter [-2,+2] */
+    float hija = 100.0f - (100.0f - dificultad) / (float)(num_hijos + 1);
+    hija += rand_float(-2.0f, 2.0f);
+    if (hija > 100.0f) hija = 100.0f;
+    if (hija < 0.0f) hija = 0.0f;
+    return hija;
+}
+
+===== src/caso_b_calculo.c =====
+/*
+ * SO-T3-DanielMonterrosa
+ * caso_b_calculo.c - Un solo Meeseeks evalúa la expresión.
+ *
+ * Gramática soportada (números double, espacios libres):
+ *   expr       := or
+ *   or         := and ("||" and)*
+ *   and        := eq ("&&" eq)*
+ *   eq         := rel (("==" | "!=") rel)*
+ *   rel        := add ((">=" | "<=" | ">" | "<") add)*
+ *   add        := mul (("+" | "-") mul)*
+ *   mul        := pow (("*" | "/" | "%") pow)*
+ *   pow        := unary ("^" unary)?
+ *   unary      := ("!" | "-" | "+") unary | primary
+ *   primary    := número | "(" expr ")"
+ * Lógicos retornan 1/0. División/mod por cero = error.
+ * Documentación completa y ejemplos en docs/diseno.md.
+ */
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <math.h>
+#include <stdlib.h>
+#include "caso_b.h"
+
+typedef struct { const char *p; int error; char errmsg[128]; } parser_t;
+
+static void skip_sp(parser_t *ps) {
+    while (*ps->p && isspace((unsigned char)*ps->p)) ps->p++;
+}
+/* Definimos de abajo hacia arriba para evitar forward hell */
+static double parse_expr(parser_t *ps); /* or */
+
+static double parse_primary(parser_t *ps) {
+    skip_sp(ps);
+    if (*ps->p == '(') {
+        ps->p++;
+        double v = parse_expr(ps);
+        skip_sp(ps);
+        if (*ps->p != ')') {
+            ps->error = 1;
+            snprintf(ps->errmsg, sizeof(ps->errmsg), "se esperaba ')'");
+            return 0;
+        }
+        ps->p++;
+        return v;
+    }
+    if (*ps->p == '\0') {
+        ps->error = 1;
+        snprintf(ps->errmsg, sizeof(ps->errmsg), "expresión vacía");
+        return 0;
+    }
+    char *end = NULL;
+    double v = strtod(ps->p, &end);
+    if (end == ps->p) {
+        ps->error = 1;
+        snprintf(ps->errmsg, sizeof(ps->errmsg),
+                 "token inválido cerca de '%.10s'", ps->p);
+        return 0;
+    }
+    ps->p = end;
+    return v;
+}
+
+static double parse_unary(parser_t *ps) {
+    skip_sp(ps);
+    if (*ps->p == '!') {
+        ps->p++;
+        double v = parse_unary(ps);
+        return (v == 0.0) ? 1.0 : 0.0;
+    }
+    if (*ps->p == '-') { ps->p++; return -parse_unary(ps); }
+    if (*ps->p == '+') { ps->p++; return parse_unary(ps); }
+    return parse_primary(ps);
+}
+
+static double parse_pow(parser_t *ps) {
+    double base = parse_unary(ps);
+    if (ps->error) return 0;
+    skip_sp(ps);
+    if (*ps->p == '^') {
+        ps->p++;
+        double exp = parse_unary(ps);
+        if (ps->error) return 0;
+        base = pow(base, exp);
+    }
+    return base;
+}
+
+static double parse_mul(parser_t *ps) {
+    double v = parse_pow(ps);
+    for (;;) {
+        skip_sp(ps);
+        if (*ps->p == '*') {
+            ps->p++;
+            double r = parse_pow(ps);
+            if (ps->error) return 0;
+            v *= r;
+        } else if (*ps->p == '/') {
+            ps->p++;
+            double r = parse_pow(ps);
+            if (ps->error) return 0;
+            if (r == 0.0) {
+                ps->error = 1;
+                snprintf(ps->errmsg, sizeof(ps->errmsg), "división por cero");
+                return 0;
+            }
+            v /= r;
+        } else if (*ps->p == '%') {
+            ps->p++;
+            double r = parse_pow(ps);
+            if (ps->error) return 0;
+            if (r == 0.0) {
+                ps->error = 1;
+                snprintf(ps->errmsg, sizeof(ps->errmsg), "módulo por cero");
+                return 0;
+            }
+            v = fmod(v, r);
+        } else break;
+        if (ps->error) return 0;
+    }
+    return v;
+}
+
+static double parse_add(parser_t *ps) {
+    double v = parse_mul(ps);
+    for (;;) {
+        skip_sp(ps);
+        if (*ps->p == '+') {
+            /* cuidado: no confundir con "++" inválido -> lo tratamos como suma unaria */
+            ps->p++;
+            double r = parse_mul(ps);
+            if (ps->error) return 0;
+            v += r;
+        } else if (*ps->p == '-') {
+            ps->p++;
+            double r = parse_mul(ps);
+            if (ps->error) return 0;
+            v -= r;
+        } else break;
+        if (ps->error) return 0;
+    }
+    return v;
+}
+
+static double parse_rel(parser_t *ps) {
+    double v = parse_add(ps);
+    for (;;) {
+        skip_sp(ps);
+        if (strncmp(ps->p, ">=", 2) == 0) {
+            ps->p += 2;
+            double r = parse_add(ps);
+            if (ps->error) return 0;
+            v = (v >= r) ? 1.0 : 0.0;
+        } else if (strncmp(ps->p, "<=", 2) == 0) {
+            ps->p += 2;
+            double r = parse_add(ps);
+            if (ps->error) return 0;
+            v = (v <= r) ? 1.0 : 0.0;
+        } else if (*ps->p == '>' && ps->p[1] != '=') {
+            ps->p++;
+            double r = parse_add(ps);
+            if (ps->error) return 0;
+            v = (v > r) ? 1.0 : 0.0;
+        } else if (*ps->p == '<' && ps->p[1] != '=') {
+            ps->p++;
+            double r = parse_add(ps);
+            if (ps->error) return 0;
+            v = (v < r) ? 1.0 : 0.0;
+        } else break;
+        if (ps->error) return 0;
+    }
+    return v;
+}
+
+static double parse_eq(parser_t *ps) {
+    double v = parse_rel(ps);
+    for (;;) {
+        skip_sp(ps);
+        if (strncmp(ps->p, "==", 2) == 0) {
+            ps->p += 2;
+            double r = parse_rel(ps);
+            if (ps->error) return 0;
+            v = (v == r) ? 1.0 : 0.0;
+        } else if (strncmp(ps->p, "!=", 2) == 0) {
+            ps->p += 2;
+            double r = parse_rel(ps);
+            if (ps->error) return 0;
+            v = (v != r) ? 1.0 : 0.0;
+        } else break;
+        if (ps->error) return 0;
+    }
+    return v;
+}
+
+static double parse_and(parser_t *ps) {
+    double v = parse_eq(ps);
+    for (;;) {
+        skip_sp(ps);
+        if (strncmp(ps->p, "&&", 2) == 0) {
+            ps->p += 2;
+            double r = parse_eq(ps);
+            if (ps->error) return 0;
+            v = ((v != 0.0) && (r != 0.0)) ? 1.0 : 0.0;
+        } else break;
+        if (ps->error) return 0;
+    }
+    return v;
+}
+
+static double parse_expr(parser_t *ps) {
+    double v = parse_and(ps);
+    for (;;) {
+        skip_sp(ps);
+        if (strncmp(ps->p, "||", 2) == 0) {
+            ps->p += 2;
+            double r = parse_and(ps);
+            if (ps->error) return 0;
+            v = ((v != 0.0) || (r != 0.0)) ? 1.0 : 0.0;
+        } else break;
+        if (ps->error) return 0;
+    }
+    return v;
+}
+
+int caso_b_evaluar(const char *expr, char *out, unsigned long out_len) {
+    if (!expr || !out || out_len == 0) return -1;
+    /* trim */
+    while (*expr && isspace((unsigned char)*expr)) expr++;
+    if (*expr == '\0') {
+        snprintf(out, out_len, "Error: expresión vacía");
+        return -1;
+    }
+    parser_t ps;
+    ps.p = expr;
+    ps.error = 0;
+    ps.errmsg[0] = '\0';
+    double v = parse_expr(&ps);
+    if (!ps.error) {
+        skip_sp(&ps);
+        if (*ps.p != '\0') {
+            ps.error = 1;
+            snprintf(ps.errmsg, sizeof(ps.errmsg),
+                     "carácter inesperado '%c'", *ps.p);
+        }
+    }
+    if (ps.error) {
+        snprintf(out, out_len, "Error: %s", ps.errmsg);
+        return -1;
+    }
+    snprintf(out, out_len, "%g", v);
+    return 0;
+}
+
+===== src/caso_c_externo.c =====
+/*
+ * SO-T3-DanielMonterrosa
+ * caso_c_externo.c - fork + exec + wait, éxito = exit 0.
+ *
+ * El Meeseeks hace fork; el nieto hace execl("/bin/sh","sh","-c",cmd).
+ * El Meeseeks espera con waitpid y reporta WEXITSTATUS.
+ * Se mide tiempo real con CLOCK_MONOTONIC.
+ */
+#define _POSIX_C_SOURCE 200809L
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <time.h>
+#include "caso_c.h"
+#include "utils.h"
+
+int caso_c_ejecutar(const char *cmd, int *exit_code, double *duracion_seg) {
+    if (!cmd || cmd[0] == '\0') {
+        if (exit_code) *exit_code = -1;
+        if (duracion_seg) *duracion_seg = 0.0;
+        return -1;
+    }
+    struct timespec t0, t1;
+    clock_gettime(CLOCK_MONOTONIC, &t0);
+
+    pid_t pid = fork();
+    if (pid < 0) {
+        if (exit_code) *exit_code = -1;
+        if (duracion_seg) *duracion_seg = 0.0;
+        return -1;
+    }
+    if (pid == 0) {
+        /* Nieto: ejecuta programa externo (mismo pattern cap. 3 Silberschatz) */
+        execl("/bin/sh", "sh", "-c", cmd, (char *)NULL);
+        _exit(127); /* exec falló */
+    }
+    int status = 0;
+    while (waitpid(pid, &status, 0) < 0) {
+        /* reintentar si EINTR */
+        continue;
+    }
+    clock_gettime(CLOCK_MONOTONIC, &t1);
+    double dur = timespec_diff_seg(t0, t1);
+    if (duracion_seg) *duracion_seg = dur;
+
+    int code = -1;
+    if (WIFEXITED(status)) code = WEXITSTATUS(status);
+    else if (WIFSIGNALED(status)) code = 128 + WTERMSIG(status);
+    if (exit_code) *exit_code = code;
+    return 0;
+}
+
+===== src/ipc.c =====
+/*
+ * SO-T3-DanielMonterrosa
+ * ipc.c - Pipes + shm + semáforos POSIX.
+ *
+ * Contadores en memoria compartida (total_meeseeks, max_N) protegidos
+ * por semáforo con nombre. Los mensajes viajan SOLO por pipes.
+ */
+#define _POSIX_C_SOURCE 200809L
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <errno.h>
+#include <sys/mman.h>
+#include <sys/stat.h>
+#include <semaphore.h>
+#include "ipc.h"
+
+static contadores_t *g_cont = NULL;
+static sem_t *g_sem = NULL;
+static int g_shm_fd = -1;
+
+int ipc_init(void) {
+    /* Limpiar restos de corridas anteriores */
+    shm_unlink(IPC_SHM_NAME);
+    sem_unlink(IPC_SEM_NAME);
+
+    g_shm_fd = shm_open(IPC_SHM_NAME, O_CREAT | O_RDWR, 0666);
+    if (g_shm_fd < 0) { perror("shm_open"); return -1; }
+    if (ftruncate(g_shm_fd, sizeof(contadores_t)) < 0) { perror("ftruncate"); return -1; }
+    g_cont = mmap(NULL, sizeof(contadores_t), PROT_READ | PROT_WRITE,
+                  MAP_SHARED, g_shm_fd, 0);
+    if (g_cont == MAP_FAILED) { perror("mmap"); g_cont = NULL; return -1; }
+    g_cont->total_meeseeks = 0;
+    g_cont->max_N = 0;
+
+    g_sem = sem_open(IPC_SEM_NAME, O_CREAT | O_EXCL, 0666, 1);
+    if (g_sem == SEM_FAILED) {
+        /* Si ya existía, abrirlo */
+        g_sem = sem_open(IPC_SEM_NAME, O_CREAT, 0666, 1);
+        if (g_sem == SEM_FAILED) { perror("sem_open"); return -1; }
+    }
+    return 0;
+}
+
+void ipc_cleanup(void) {
+    if (g_cont && g_cont != MAP_FAILED) {
+        munmap(g_cont, sizeof(contadores_t));
+        g_cont = NULL;
+    }
+    if (g_shm_fd >= 0) { close(g_shm_fd); g_shm_fd = -1; }
+    shm_unlink(IPC_SHM_NAME);
+    if (g_sem && g_sem != SEM_FAILED) { sem_close(g_sem); g_sem = NULL; }
+    sem_unlink(IPC_SEM_NAME);
+}
+
+void ipc_contador_nuevo_meeseeks(int N) {
+    if (!g_cont || !g_sem || g_sem == SEM_FAILED) return;
+    sem_wait(g_sem);
+    g_cont->total_meeseeks++;
+    if (N > g_cont->max_N) g_cont->max_N = N;
+    sem_post(g_sem);
+}
+
+int ipc_contador_total(void) {
+    int v = 0;
+    if (!g_cont || !g_sem || g_sem == SEM_FAILED) return 0;
+    sem_wait(g_sem);
+    v = g_cont->total_meeseeks;
+    sem_post(g_sem);
+    return v;
+}
+
+int ipc_contador_maxN(void) {
+    int v = 0;
+    if (!g_cont || !g_sem || g_sem == SEM_FAILED) return 0;
+    sem_wait(g_sem);
+    v = g_cont->max_N;
+    sem_post(g_sem);
+    return v;
+}
+
+int ipc_pipe_crear(int fds[2]) {
+    if (pipe(fds) < 0) { perror("pipe"); return -1; }
+    return 0;
+}
+
+/* Escritura exacta */
+int ipc_pipe_enviar(int fd, const void *buf, size_t len) {
+    size_t sent = 0;
+    const char *p = (const char *)buf;
+    while (sent < len) {
+        ssize_t n = write(fd, p + sent, len - sent);
+        if (n < 0) {
+            if (errno == EINTR) continue;
+            return -1;
+        }
+        if (n == 0) return -1;
+        sent += (size_t)n;
+    }
+    return 0;
+}
+
+/* Lectura exacta (0 = EOF prematuro => error) */
+int ipc_pipe_recibir(int fd, void *buf, size_t len) {
+    size_t got = 0;
+    char *p = (char *)buf;
+    while (got < len) {
+        ssize_t n = read(fd, p + got, len - got);
+        if (n < 0) {
+            if (errno == EINTR) continue;
+            return -1;
+        }
+        if (n == 0) return -1; /* pipe cerrado antes de completar */
+        got += (size_t)n;
+    }
+    return 0;
+}
+
+===== src/meeseeks.c =====
+/*
+ * SO-T3-DanielMonterrosa
+ * meeseeks.c - fork, saludo/despedida, delegación recursiva Caso A.
+ *
+ * Todos los hijos ejecutan el mismo código (requisito tarea).
+ * Mensajes privados via pipe; contadores via shm+sem (ipc.c).
+ * Tiempos reales con clock_gettime; sleeps solo simulan trabajo.
+ */
+#define _POSIX_C_SOURCE 200809L
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <signal.h>
+#include <errno.h>
+#include <time.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include "meeseeks.h"
+#include "common.h"
+#include "caso_a.h"
+#include "caso_b.h"
+#include "caso_c.h"
+#include "ipc.h"
+#include "utils.h"
+
+/* Para despedirse si el padre nos mata tras éxito de un hermano */
+static int g_N = 1, g_i = 1;
+static void on_sigterm(int sig) {
+    (void)sig;
+    pid_t pid = getpid(), ppid = getppid();
+    /* write es async-safe; usamos dprintf para el adiós */
+    dprintf(STDOUT_FILENO,
+        "[pid=%d ppid=%d] Meeseeks (N=%d,i=%d) recibe orden de terminar, se despide. ¡Adiós!\n",
+        (int)pid, (int)ppid, g_N, g_i);
+    _exit(2);
+}
+
+void meeseeks_saludar(pid_t pid, pid_t ppid, int N, int i) {
+    printf("\n[pid=%d ppid=%d] Hi, I'm Mr. Meeseeks! Look at Meeeee. (%d, %d, %d, %d)\n",
+           (int)pid, (int)ppid, (int)pid, (int)ppid, N, i);
+    fflush(stdout);
+}
+
+void meeseeks_despedirse(pid_t pid, pid_t ppid, int N, int i, const char *motivo) {
+    printf("[pid=%d ppid=%d] Meeseeks (N=%d,i=%d) %s. ¡Adiós! *desaparece*\n",
+           (int)pid, (int)ppid, N, i, motivo ? motivo : "termina");
+    fflush(stdout);
+}
+
+/* Nodo recursivo: NO retorna, termina con _exit(code).
+ * fd_down: lectura solicitud (propio), fd_up: escritura resultado al padre. */
+static void meeseeks_nodo(solicitud_t sol, int N, int i, int fd_down, int fd_up) {
+    alarm(0); /* el timeout de caos solo lo maneja el Box */
+    signal(SIGTERM, on_sigterm);
+    signal(SIGPIPE, SIG_IGN);
+    g_N = N; g_i = i;
+    srand((unsigned)(getpid() * 7919u + (unsigned)time(NULL)));
+
+    pid_t pid = getpid(), ppid = getppid();
+
+    /* Leer solicitud por mensaje privado via pipe (requisito) */
+    if (fd_down >= 0) {
+        solicitud_t tmp;
+        if (ipc_pipe_recibir(fd_down, &tmp, sizeof(tmp)) == 0) {
+            sol = tmp;
+        }
+        close(fd_down);
+    }
+    meeseeks_saludar(pid, ppid, N, i);
+    ipc_contador_nuevo_meeseeks(N); /* shm+sem: recurso compartido */
+
+    meeseeks_result_t res;
+    memset(&res, 0, sizeof(res));
+    res.exito = 0;
+    res.ganador_pid = pid;
+    res.ganador_ppid = ppid;
+    res.ganador_N = N;
+    res.ganador_i = i;
+    res.sim_time = 0.0;
+
+    /* ============ Caso B: cálculo, 1 solo Meeseeks ============ */
+    if (sol.tipo == REQ_CALCULO) {
+        char out[256];
+        log_msg("Caso B: calculando '%s' (N=%d,i=%d)...", sol.texto, N, i);
+        int rc = caso_b_evaluar(sol.texto, out, sizeof(out));
+        if (rc == 0) {
+            res.exito = 1;
+            snprintf(res.detalle, sizeof(res.detalle), "cálculo OK: %s = %s", sol.texto, out);
+        } else {
+            res.exito = 0;
+            snprintf(res.detalle, sizeof(res.detalle), "%s", out);
+            log_msg("No pude resolver el cálculo: %s", out);
+        }
+        res.sim_time = 0.0;
+        if (fd_up >= 0) { ipc_pipe_enviar(fd_up, &res, sizeof(res)); close(fd_up); }
+        meeseeks_despedirse(pid, ppid, N, i,
+            res.exito ? "solicitud completada, agradece haberle servido" : "falló el cálculo");
+        _exit(res.exito ? 0 : 1);
+    }
+
+    /* ============ Caso C: programa externo ============ */
+    if (sol.tipo == REQ_PROGRAMA) {
+        log_msg("Caso C: ejecutando '%s' (N=%d,i=%d)...", sol.texto, N, i);
+        int code = -1;
+        double dur = 0;
+        int rc = caso_c_ejecutar(sol.texto, &code, &dur);
+        if (rc == 0 && code == 0) {
+            res.exito = 1;
+            snprintf(res.detalle, sizeof(res.detalle),
+                     "programa OK exit=0 en %.3fs: %s", dur, sol.texto);
+        } else {
+            res.exito = 0;
+            snprintf(res.detalle, sizeof(res.detalle),
+                     "programa falló exit=%d en %.3fs: %s", code, dur, sol.texto);
+            log_msg("Programa terminó con errores (exit %d). Reporto fracaso.", code);
+        }
+        res.sim_time = 0.0; /* ejecución externa es tiempo real, no simulado */
+        if (fd_up >= 0) { ipc_pipe_enviar(fd_up, &res, sizeof(res)); close(fd_up); }
+        meeseeks_despedirse(pid, ppid, N, i,
+            res.exito ? "solicitud completada, agradece haberle servido" : "el programa falló");
+        _exit(res.exito ? 0 : 1);
+    }
+
+    /* ============ Caso A: textual con dificultad ============ */
+    float dif = sol.dificultad;
+    double sim = caso_a_tiempo_simulacion();
+    log_msg("Caso A: '%s' dificultad=%.2f, trabajando %.2fs (N=%d,i=%d)...",
+            sol.texto, dif, sim, N, i);
+    {
+        struct timespec ts;
+        ts.tv_sec = (time_t)sim;
+        ts.tv_nsec = (long)((sim - ts.tv_sec) * 1e9);
+        nanosleep(&ts, NULL); /* simulación; Box lo restará del tiempo real */
+    }
+    res.sim_time = sim;
+
+    /* Dificultad 0: imposible, jamás resuelve (pero respeta contingencia) */
+    int puedo = caso_a_intentar_resolver(dif);
+    if (puedo) {
+        res.exito = 1;
+        snprintf(res.detalle, sizeof(res.detalle),
+                 "solicitud '%s' completada por Meeseeks (%d,%d,%d,%d)",
+                 sol.texto, (int)pid, (int)ppid, N, i);
+        if (fd_up >= 0) { ipc_pipe_enviar(fd_up, &res, sizeof(res)); close(fd_up); }
+        meeseeks_despedirse(pid, ppid, N, i, "solicitud completada, agradece haberle servido");
+        _exit(0);
+    }
+
+    int n_hijos = caso_a_num_hijos(dif);
+    if (n_hijos == 0) {
+        /* 85.01-100 pero perdió la apuesta (10%): fracaso sin hijos */
+        res.exito = 0;
+        snprintf(res.detalle, sizeof(res.detalle),
+                 "aun siendo fácil (%.2f) fallé", dif);
+        log_msg("No pude resolverlo yo solo. Reporto fracaso al Box.");
+        if (fd_up >= 0) { ipc_pipe_enviar(fd_up, &res, sizeof(res)); close(fd_up); }
+        meeseeks_despedirse(pid, ppid, N, i, "no pudo resolver la tarea");
+        _exit(1);
+    }
+
+    /* Contingencia anti fork-bomb (documentada en docs/diseno.md) */
+    if (N >= MEESEEKS_MAX_NIVELES ||
+        ipc_contador_total() + n_hijos > MEESEEKS_MAX_TOTAL) {
+        res.exito = 0;
+        snprintf(res.detalle, sizeof(res.detalle),
+                 "límite alcanzado (N=%d, total=%d): tarea imposible, evito colapso",
+                 N, ipc_contador_total());
+        log_msg("¡CAOS EVITADO! Llego al límite (N=%d). No creo más Meeseeks.", N);
+        if (fd_up >= 0) { ipc_pipe_enviar(fd_up, &res, sizeof(res)); close(fd_up); }
+        meeseeks_despedirse(pid, ppid, N, i, "declara tarea imposible por seguridad");
+        _exit(1);
+    }
+
+    log_msg("¡Necesito ayuda! Creando %d Meeseeks hijos (N=%d)...", n_hijos, N + 1);
+    float dif_hija = caso_a_diluir(dif, n_hijos);
+    log_msg("Aging: dificultad %.2f -> %.2f para los hijos", dif, dif_hija);
+
+    pid_t hijos[MEESEEKS_MAX_HIJOS];
+    int up_read[MEESEEKS_MAX_HIJOS];
+    int alive[MEESEEKS_MAX_HIJOS];
+    meeseeks_result_t res_h[MEESEEKS_MAX_HIJOS];
+    int got_h[MEESEEKS_MAX_HIJOS];
+    for (int k = 0; k < n_hijos; k++) {
+        hijos[k] = -1; up_read[k] = -1; alive[k] = 0;
+        got_h[k] = 0;
+        memset(&res_h[k], 0, sizeof(res_h[k]));
+    }
+
+    for (int k = 0; k < n_hijos; k++) {
+        int dpipe[2], upipe[2];
+        if (ipc_pipe_crear(dpipe) < 0 || ipc_pipe_crear(upipe) < 0) {
+            log_msg("Error creando pipes para hijo %d", k + 1);
+            continue;
+        }
+        fflush(stdout);
+        pid_t c = fork();
+        if (c < 0) {
+            log_msg("fork falló para hijo %d: %s", k + 1, strerror(errno));
+            close(dpipe[0]); close(dpipe[1]);
+            close(upipe[0]); close(upipe[1]);
+            continue;
+        }
+        if (c == 0) {
+            /* Hijo: cierra extremos del padre y ejecuta mismo código */
+            close(dpipe[1]);
+            close(upipe[0]);
+            solicitud_t sub = sol;
+            sub.dificultad = dif_hija;
+            /* i: 1..n según especificación (N+1 respecto al padre) */
+            meeseeks_nodo(sub, N + 1, k + 1, dpipe[0], upipe[1]);
+            _exit(1); /* nunca llega */
+        }
+        /* Padre: cierra extremos del hijo */
+        close(dpipe[0]);
+        close(upipe[1]);
+        hijos[k] = c;
+        up_read[k] = upipe[0];
+        alive[k] = 1;
+        /* Enviar sub-solicitud por mensaje privado via pipe */
+        solicitud_t sub = sol;
+        sub.dificultad = dif_hija;
+        if (ipc_pipe_enviar(dpipe[1], &sub, sizeof(sub)) < 0)
+            log_msg("Aviso: no pude enviar solicitud al hijo %d", k + 1);
+        close(dpipe[1]);
+    }
+
+    /* Esperar hijos; si uno tiene éxito, ordenar a hermanos terminar */
+    int pendientes = 0;
+    for (int k = 0; k < n_hijos; k++) if (hijos[k] > 0) pendientes++;
+    int ganador_idx = -1;
+
+    while (pendientes > 0) {
+        int st = 0;
+        pid_t w = waitpid(-1, &st, WNOHANG);
+        if (w > 0) {
+            for (int k = 0; k < n_hijos; k++) {
+                if (hijos[k] == w) {
+                    alive[k] = 0;
+                    pendientes--;
+                    int ok = (WIFEXITED(st) && WEXITSTATUS(st) == 0);
+                    /* Leer resultado del hijo por su pipe */
+                    if (ipc_pipe_recibir(up_read[k], &res_h[k], sizeof(res_h[k])) == 0)
+                        got_h[k] = 1;
+                    else {
+                        got_h[k] = 0;
+                        res_h[k].exito = ok ? 1 : 0;
+                        res_h[k].sim_time = 0;
+                    }
+                    if (ok && ganador_idx < 0) {
+                        ganador_idx = k;
+                        /* Avisar a hermanos que terminen (requisito) */
+                        for (int j = 0; j < n_hijos; j++) {
+                            if (alive[j] && hijos[j] > 0) {
+                                log_msg("Comunicando al hermano (i=%d,pid=%d) que termine...",
+                                        j + 1, (int)hijos[j]);
+                                kill(hijos[j], SIGTERM);
+                            }
+                        }
+                    }
+                    close(up_read[k]);
+                    up_read[k] = -1;
+                    break;
+                }
+            }
+        } else if (w == 0) {
+            struct timespec t = {0, 50000000L}; /* 50ms */
+            nanosleep(&t, NULL);
+        } else {
+            if (errno == EINTR) continue;
+            if (errno == ECHILD) break;
+            struct timespec t = {0, 50000000L};
+            nanosleep(&t, NULL);
+        }
+    }
+    /* Cierre defensivo de pipes restantes */
+    for (int k = 0; k < n_hijos; k++)
+        if (up_read[k] >= 0) { close(up_read[k]); up_read[k] = -1; }
+
+    /* Agregar tiempos simulados de hijos */
+    for (int k = 0; k < n_hijos; k++)
+        if (got_h[k]) res.sim_time += res_h[k].sim_time;
+
+    if (ganador_idx >= 0 && got_h[ganador_idx]) {
+        /* Propagar éxito hacia arriba preservando al ganador original */
+        res = res_h[ganador_idx];
+        /* sim_time ya incluye el propio + hijos? res_h trae subárbol;
+         * sumar el propio sim: */
+        res.sim_time += sim;
+        log_msg("Hijo (N=%d,i=%d) resolvió. Propago éxito al padre y me despido...",
+                res.ganador_N, res.ganador_i);
+        if (fd_up >= 0) { ipc_pipe_enviar(fd_up, &res, sizeof(res)); close(fd_up); }
+        meeseeks_despedirse(pid, ppid, N, i, "propaga éxito hacia arriba");
+        _exit(0);
+    }
+    /* Todos fallaron */
+    res.exito = 0;
+    res.ganador_pid = pid;
+    res.ganador_ppid = ppid;
+    res.ganador_N = N;
+    res.ganador_i = i;
+    snprintf(res.detalle, sizeof(res.detalle),
+             "ni con %d ayudantes (N=%d) se logró '%.100s'", n_hijos, N, sol.texto);
+    log_msg("Ningún hijo lo logró. Reporto fracaso hacia arriba...");
+    if (fd_up >= 0) { ipc_pipe_enviar(fd_up, &res, sizeof(res)); close(fd_up); }
+    meeseeks_despedirse(pid, ppid, N, i, "no se pudo cumplir la misión");
+    _exit(1);
+}
+
+void meeseeks_ejecutar(solicitud_t sol, int N, int i, int pipe_lectura_fd) {
+    /* Si nos dieron pipe de resultado aparte no lo conocemos aquí;
+     * esta función es para el primer Meeseeks sin pipe de subida:
+     * crea su propio flujo con fd_up = -1 (Box usa exit code + pipe). */
+    (void)pipe_lectura_fd;
+    meeseeks_nodo(sol, N, i, pipe_lectura_fd, -1);
+}
+
+pid_t meeseeks_crear_inicial(const solicitud_t *sol, int fds_padre[2]) {
+    int dpipe[2], upipe[2];
+    if (ipc_pipe_crear(dpipe) < 0 || ipc_pipe_crear(upipe) < 0) return -1;
+    fflush(stdout); /* evita duplicar buffer del Box en el hijo */
+    pid_t c = fork();
+    if (c < 0) {
+        close(dpipe[0]); close(dpipe[1]);
+        close(upipe[0]); close(upipe[1]);
+        return -1;
+    }
+    if (c == 0) {
+        /* Hijo Meeseeks N=1,i=1: líder de grupo para que el Box
+         * pueda matar el subárbol completo con kill(-pid) en caos */
+        setpgid(0, 0);
+        close(dpipe[1]);
+        close(upipe[0]);
+        meeseeks_nodo(*sol, 1, 1, dpipe[0], upipe[1]);
+        _exit(1); /* nunca */
+    }
+    /* Padre Box */
+    close(dpipe[0]);
+    close(upipe[1]);
+    fds_padre[0] = dpipe[1]; /* Box escribe solicitud */
+    fds_padre[1] = upipe[0]; /* Box lee resultado */
+    return c;
+}
+
+===== src/utils.c =====
+/*
+ * SO-T3-DanielMonterrosa
+ * utils.c - Tiempos y utilidades.
+ */
+#define _POSIX_C_SOURCE 200809L
+#include <stdio.h>
+#include <stdarg.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include <unistd.h>
+#include "utils.h"
+
+double timespec_diff_seg(struct timespec a, struct timespec b) {
+    double d = (double)(b.tv_sec - a.tv_sec)
+             + ((double)b.tv_nsec - (double)a.tv_nsec) / 1e9;
+    return d < 0 ? 0 : d;
+}
+
+float rand_float(float min, float max) {
+    return min + ((float)rand() / (float)RAND_MAX) * (max - min);
+}
+
+int rand_int(int min, int max) {
+    if (max <= min) return min;
+    return min + rand() % (max - min + 1);
+}
+
+void log_msg(const char *fmt, ...) {
+    va_list ap;
+    va_start(ap, fmt);
+    /* Todo mensaje Meeseeks indica pid y ppid (requisito tarea) */
+    fprintf(stdout, "[pid=%d ppid=%d] ", (int)getpid(), (int)getppid());
+    vfprintf(stdout, fmt, ap);
+    fprintf(stdout, "\n");
+    fflush(stdout);
+    va_end(ap);
+}
+
+void trim_newline(char *s) {
+    if (!s) return;
+    size_t n = strlen(s);
+    while (n > 0 && (s[n-1] == '\n' || s[n-1] == '\r')) s[--n] = '\0';
+    /* trim espacios extremos */
+    char *p = s;
+    while (*p && isspace((unsigned char)*p)) p++;
+    if (p != s) memmove(s, p, strlen(p) + 1);
+    n = strlen(s);
+    while (n > 0 && isspace((unsigned char)s[n-1])) s[--n] = '\0';
+}
+
+/* Palabras que cierran el Box: chao, adiós/adios, bye, salir, exit, q */
+int es_despedida(const char *s) {
+    if (!s) return 0;
+    char tmp[64];
+    strncpy(tmp, s, sizeof(tmp) - 1);
+    tmp[sizeof(tmp)-1] = '\0';
+    for (char *p = tmp; *p; p++) *p = (char)tolower((unsigned char)*p);
+    return (strcmp(tmp, "chao") == 0 || strcmp(tmp, "adios") == 0 ||
+            strcmp(tmp, "adiós") == 0 || strcmp(tmp, "adiós") == 0 ||
+            strcmp(tmp, "bye") == 0 || strcmp(tmp, "salir") == 0 ||
+            strcmp(tmp, "exit") == 0 || strcmp(tmp, "q") == 0 ||
+            strcmp(tmp, "chau") == 0);
+}
+
