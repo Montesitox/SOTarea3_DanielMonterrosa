@@ -9,6 +9,9 @@
 
 double timespec_diff_seg(struct timespec a, struct timespec b);
 float rand_float(float min, float max);
+int rand_int(int min, int max);
 void log_msg(const char *fmt, ...);
+void trim_newline(char *s);
+int es_despedida(const char *s);
 
 #endif

@@ -1,14 +1,14 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -g -Iinclude -pthread
+CFLAGS = -Wall -Wextra -g -std=c11 -D_POSIX_C_SOURCE=200809L -Iinclude -pthread
+LDFLAGS = -pthread -lm -lrt
 SRC = src/box.c src/meeseeks.c src/caso_a_texto.c src/caso_b_calculo.c src/caso_c_externo.c src/ipc.c src/utils.c
-OBJ = $(SRC:.c=.o)
 BIN = bin/box
 
 all: $(BIN)
 
 $(BIN): $(SRC)
 	mkdir -p bin
-	$(CC) $(CFLAGS) -o $@ $(SRC)
+	$(CC) $(CFLAGS) -o $@ $(SRC) $(LDFLAGS)
 
 clean:
 	rm -f src/*.o $(BIN)
