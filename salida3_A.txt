@@ -1,0 +1,1543 @@
+=== BOX Mr. Meeseeks ===
+Pida solicitudes. Tipos: A=texto, B=cálculo, C=programa.
+Para salir escriba: chao / adios / bye / salir
+Caos planetario en 300 s. Dificultad modo 1. Sim [0.5, 1.0]s.
+
+
+--- Solicitud #1 ---
+Tipo [A/B/C o salir]: Solicitud: Dificultad de la solicitud [0=imposible .. 100=muy fácil]: Box: dificultad asignada = 0.00
+Box: creé a Mr. Meeseeks pid=57574 para 'Quiero ser omnipotente'
+
+[pid=57574 ppid=57086] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57574, 57086, 1, 1)
+[pid=57574 ppid=57086] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.56s (N=1,i=1)...
+[pid=57574 ppid=57086] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=2)...
+[pid=57574 ppid=57086] Aging: dificultad 0.00 -> 0.00 para los hijos
+
+[pid=57613 ppid=57574] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57613, 57574, 2, 1)
+[pid=57613 ppid=57574] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.66s (N=2,i=1)...
+
+[pid=57614 ppid=57574] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57614, 57574, 2, 2)
+[pid=57614 ppid=57574] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.66s (N=2,i=2)...
+
+[pid=57616 ppid=57574] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57616, 57574, 2, 3)
+[pid=57616 ppid=57574] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.67s (N=2,i=3)...
+
+[pid=57617 ppid=57574] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57617, 57574, 2, 4)
+[pid=57617 ppid=57574] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.68s (N=2,i=4)...
+
+[pid=57618 ppid=57574] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57618, 57574, 2, 5)
+[pid=57618 ppid=57574] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.68s (N=2,i=5)...
+[pid=57613 ppid=57574] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=3)...
+[pid=57613 ppid=57574] Aging: dificultad 0.00 -> 0.00 para los hijos
+
+[pid=57631 ppid=57613] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57631, 57613, 3, 1)
+
+[pid=57632 ppid=57613] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57632, 57613, 3, 2)
+
+[pid=57633 ppid=57613] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57633, 57613, 3, 3)
+
+[pid=57634 ppid=57613] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57634, 57613, 3, 4)
+
+[pid=57635 ppid=57613] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57635, 57613, 3, 5)
+[pid=57632 ppid=57613] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.60s (N=3,i=2)...
+[pid=57633 ppid=57613] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.86s (N=3,i=3)...
+[pid=57634 ppid=57613] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.61s (N=3,i=4)...
+[pid=57614 ppid=57574] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=3)...
+[pid=57614 ppid=57574] Aging: dificultad 0.00 -> 0.00 para los hijos
+[pid=57631 ppid=57613] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.60s (N=3,i=1)...
+[pid=57635 ppid=57613] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.62s (N=3,i=5)...
+
+[pid=57639 ppid=57614] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57639, 57614, 3, 3)
+
+[pid=57640 ppid=57614] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57640, 57614, 3, 4)
+[pid=57640 ppid=57614] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.64s (N=3,i=4)...
+[pid=57616 ppid=57574] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=3)...
+[pid=57616 ppid=57574] Aging: dificultad 0.00 -> 0.00 para los hijos
+[pid=57639 ppid=57614] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.88s (N=3,i=3)...
+
+[pid=57641 ppid=57616] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57641, 57616, 3, 1)
+[pid=57641 ppid=57616] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.89s (N=3,i=1)...
+[pid=57618 ppid=57574] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=3)...
+[pid=57618 ppid=57574] Aging: dificultad 0.00 -> 0.00 para los hijos
+[pid=57617 ppid=57574] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=3)...
+[pid=57617 ppid=57574] Aging: dificultad 0.00 -> 0.00 para los hijos
+
+[pid=57643 ppid=57618] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57643, 57618, 3, 1)
+[pid=57643 ppid=57618] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.90s (N=3,i=1)...
+
+[pid=57649 ppid=57616] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57649, 57616, 3, 3)
+[pid=57649 ppid=57616] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.93s (N=3,i=3)...
+
+[pid=57642 ppid=57616] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57642, 57616, 3, 2)
+[pid=57642 ppid=57616] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.90s (N=3,i=2)...
+
+[pid=57651 ppid=57616] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57651, 57616, 3, 5)
+
+[pid=57648 ppid=57618] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57648, 57618, 3, 2)
+[pid=57648 ppid=57618] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.92s (N=3,i=2)...
+[pid=57651 ppid=57616] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.68s (N=3,i=5)...
+
+[pid=57650 ppid=57616] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57650, 57616, 3, 4)
+[pid=57650 ppid=57616] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.93s (N=3,i=4)...
+
+[pid=57647 ppid=57617] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57647, 57617, 3, 3)
+[pid=57647 ppid=57617] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.92s (N=3,i=3)...
+
+[pid=57652 ppid=57618] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57652, 57618, 3, 3)
+[pid=57652 ppid=57618] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.94s (N=3,i=3)...
+
+[pid=57653 ppid=57617] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57653, 57617, 3, 4)
+[pid=57653 ppid=57617] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.69s (N=3,i=4)...
+
+[pid=57657 ppid=57618] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57657, 57618, 3, 4)
+[pid=57657 ppid=57618] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.71s (N=3,i=4)...
+
+[pid=57654 ppid=57617] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57654, 57617, 3, 5)
+[pid=57654 ppid=57617] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.70s (N=3,i=5)...
+
+[pid=57658 ppid=57618] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57658, 57618, 3, 5)
+[pid=57658 ppid=57618] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.72s (N=3,i=5)...
+
+[pid=57637 ppid=57614] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57637, 57614, 3, 1)
+[pid=57637 ppid=57614] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.87s (N=3,i=1)...
+
+[pid=57638 ppid=57614] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57638, 57614, 3, 2)
+[pid=57638 ppid=57614] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.88s (N=3,i=2)...
+
+[pid=57644 ppid=57614] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57644, 57614, 3, 5)
+[pid=57644 ppid=57614] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.66s (N=3,i=5)...
+
+[pid=57646 ppid=57617] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57646, 57617, 3, 2)
+[pid=57646 ppid=57617] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.66s (N=3,i=2)...
+
+[pid=57645 ppid=57617] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57645, 57617, 3, 1)
+[pid=57645 ppid=57617] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.91s (N=3,i=1)...
+[pid=57634 ppid=57613] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=4)...
+[pid=57634 ppid=57613] Aging: dificultad 0.00 -> 0.00 para los hijos
+
+[pid=57707 ppid=57634] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57707, 57634, 4, 1)
+[pid=57707 ppid=57634] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.87s (N=4,i=1)...
+
+[pid=57708 ppid=57634] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57708, 57634, 4, 2)
+[pid=57708 ppid=57634] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.62s (N=4,i=2)...
+
+[pid=57709 ppid=57634] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57709, 57634, 4, 3)
+[pid=57709 ppid=57634] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.62s (N=4,i=3)...
+
+[pid=57710 ppid=57634] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57710, 57634, 4, 4)
+[pid=57710 ppid=57634] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.88s (N=4,i=4)...
+
+[pid=57711 ppid=57634] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57711, 57634, 4, 5)
+[pid=57711 ppid=57634] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.63s (N=4,i=5)...
+[pid=57640 ppid=57614] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=4)...
+[pid=57640 ppid=57614] Aging: dificultad 0.00 -> 0.00 para los hijos
+
+[pid=57712 ppid=57640] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57712, 57640, 4, 1)
+[pid=57712 ppid=57640] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.64s (N=4,i=1)...
+
+[pid=57713 ppid=57640] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57713, 57640, 4, 2)
+[pid=57713 ppid=57640] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.64s (N=4,i=2)...
+[pid=57635 ppid=57613] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=4)...
+[pid=57635 ppid=57613] Aging: dificultad 0.00 -> 0.00 para los hijos
+[pid=57631 ppid=57613] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=4)...
+[pid=57631 ppid=57613] Aging: dificultad 0.00 -> 0.00 para los hijos
+
+[pid=57717 ppid=57631] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57717, 57631, 4, 1)
+[pid=57717 ppid=57631] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.66s (N=4,i=1)...
+
+[pid=57718 ppid=57631] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57718, 57631, 4, 2)
+[pid=57718 ppid=57631] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.66s (N=4,i=2)...
+[pid=57632 ppid=57613] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=4)...
+[pid=57632 ppid=57613] Aging: dificultad 0.00 -> 0.00 para los hijos
+
+[pid=57720 ppid=57632] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57720, 57632, 4, 1)
+[pid=57720 ppid=57632] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.92s (N=4,i=1)...
+
+[pid=57716 ppid=57635] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57716, 57635, 4, 2)
+[pid=57716 ppid=57635] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.66s (N=4,i=2)...
+
+[pid=57724 ppid=57635] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57724, 57635, 4, 4)
+[pid=57724 ppid=57635] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.69s (N=4,i=4)...
+
+[pid=57721 ppid=57632] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57721, 57632, 4, 2)
+[pid=57721 ppid=57632] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.93s (N=4,i=2)...
+
+[pid=57722 ppid=57635] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57722, 57635, 4, 3)
+[pid=57722 ppid=57635] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.93s (N=4,i=3)...
+
+[pid=57715 ppid=57635] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57715, 57635, 4, 1)
+[pid=57715 ppid=57635] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.65s (N=4,i=1)...
+
+[pid=57728 ppid=57631] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57728, 57631, 4, 4)
+[pid=57728 ppid=57631] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.71s (N=4,i=4)...
+
+[pid=57723 ppid=57632] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57723, 57632, 4, 3)
+[pid=57723 ppid=57632] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.94s (N=4,i=3)...
+
+[pid=57714 ppid=57640] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57714, 57640, 4, 3)
+[pid=57714 ppid=57640] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.90s (N=4,i=3)...
+
+[pid=57719 ppid=57631] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57719, 57631, 4, 3)
+[pid=57719 ppid=57631] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.67s (N=4,i=3)...
+
+[pid=57725 ppid=57635] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57725, 57635, 4, 5)
+[pid=57725 ppid=57635] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.70s (N=4,i=5)...
+
+[pid=57726 ppid=57632] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57726, 57632, 4, 4)
+[pid=57726 ppid=57632] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.70s (N=4,i=4)...
+
+[pid=57727 ppid=57640] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57727, 57640, 4, 4)
+[pid=57727 ppid=57640] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.71s (N=4,i=4)...
+
+[pid=57729 ppid=57631] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57729, 57631, 4, 5)
+[pid=57729 ppid=57631] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.72s (N=4,i=5)...
+
+[pid=57730 ppid=57632] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57730, 57632, 4, 5)
+[pid=57730 ppid=57632] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.72s (N=4,i=5)...
+
+[pid=57731 ppid=57640] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57731, 57640, 4, 5)
+[pid=57731 ppid=57640] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.97s (N=4,i=5)...
+[pid=57715 ppid=57635] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=5)...
+[pid=57715 ppid=57635] Aging: dificultad 0.00 -> 0.00 para los hijos
+[pid=57723 ppid=57632] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=5)...
+[pid=57723 ppid=57632] Aging: dificultad 0.00 -> 0.00 para los hijos
+
+[pid=57734 ppid=57723] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57734, 57723, 5, 1)
+[pid=57734 ppid=57723] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.67s (N=5,i=1)...
+[pid=57646 ppid=57617] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=4)...
+[pid=57646 ppid=57617] Aging: dificultad 0.00 -> 0.00 para los hijos
+[pid=57645 ppid=57617] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=4)...
+[pid=57645 ppid=57617] Aging: dificultad 0.00 -> 0.00 para los hijos
+
+[pid=57736 ppid=57645] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57736, 57645, 4, 1)
+[pid=57736 ppid=57645] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.68s (N=4,i=1)...
+[pid=57714 ppid=57640] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=5)...
+[pid=57714 ppid=57640] Aging: dificultad 0.00 -> 0.00 para los hijos
+
+[pid=57738 ppid=57714] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57738, 57714, 5, 1)
+[pid=57738 ppid=57714] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.93s (N=5,i=1)...
+[pid=57643 ppid=57618] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=4)...
+[pid=57643 ppid=57618] Aging: dificultad 0.00 -> 0.00 para los hijos
+
+[pid=57740 ppid=57643] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57740, 57643, 4, 1)
+[pid=57740 ppid=57643] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.94s (N=4,i=1)...
+[pid=57719 ppid=57631] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=5)...
+[pid=57719 ppid=57631] Aging: dificultad 0.00 -> 0.00 para los hijos
+[pid=57725 ppid=57635] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=5)...
+[pid=57725 ppid=57635] Aging: dificultad 0.00 -> 0.00 para los hijos
+[pid=57651 ppid=57616] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=4)...
+[pid=57651 ppid=57616] Aging: dificultad 0.00 -> 0.00 para los hijos
+[pid=57722 ppid=57635] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=5)...
+[pid=57722 ppid=57635] Aging: dificultad 0.00 -> 0.00 para los hijos
+[pid=57644 ppid=57614] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=4)...
+[pid=57644 ppid=57614] Aging: dificultad 0.00 -> 0.00 para los hijos
+[pid=57727 ppid=57640] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=5)...
+[pid=57727 ppid=57640] Aging: dificultad 0.00 -> 0.00 para los hijos
+
+[pid=57747 ppid=57727] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57747, 57727, 5, 1)
+[pid=57747 ppid=57727] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.72s (N=5,i=1)...
+
+[pid=57750 ppid=57651] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57750, 57651, 4, 2)
+[pid=57750 ppid=57651] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.99s (N=4,i=2)...
+
+[pid=57751 ppid=57651] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57751, 57651, 4, 3)
+[pid=57751 ppid=57651] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.99s (N=4,i=3)...
+
+[pid=57752 ppid=57651] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57752, 57651, 4, 4)
+[pid=57752 ppid=57651] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 1.00s (N=4,i=4)...
+
+[pid=57753 ppid=57651] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57753, 57651, 4, 5)
+[pid=57753 ppid=57651] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.75s (N=4,i=5)...
+[pid=57721 ppid=57632] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=5)...
+[pid=57721 ppid=57632] Aging: dificultad 0.00 -> 0.00 para los hijos
+[pid=57729 ppid=57631] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=5)...
+[pid=57729 ppid=57631] Aging: dificultad 0.00 -> 0.00 para los hijos
+[pid=57650 ppid=57616] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=4)...
+[pid=57650 ppid=57616] Aging: dificultad 0.00 -> 0.00 para los hijos
+
+[pid=57756 ppid=57650] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57756, 57650, 4, 1)
+[pid=57756 ppid=57650] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.52s (N=4,i=1)...
+[pid=57726 ppid=57632] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=5)...
+[pid=57726 ppid=57632] Aging: dificultad 0.00 -> 0.00 para los hijos
+[pid=57730 ppid=57632] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=5)...
+[pid=57730 ppid=57632] Aging: dificultad 0.00 -> 0.00 para los hijos
+[pid=57716 ppid=57635] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=5)...
+[pid=57716 ppid=57635] Aging: dificultad 0.00 -> 0.00 para los hijos
+[pid=57642 ppid=57616] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=4)...
+[pid=57642 ppid=57616] Aging: dificultad 0.00 -> 0.00 para los hijos
+[pid=57653 ppid=57617] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=4)...
+[pid=57653 ppid=57617] Aging: dificultad 0.00 -> 0.00 para los hijos
+
+[pid=57743 ppid=57725] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57743, 57725, 5, 1)
+[pid=57743 ppid=57725] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.71s (N=5,i=1)...
+
+[pid=57759 ppid=57730] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57759, 57730, 5, 1)
+[pid=57759 ppid=57730] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.78s (N=5,i=1)...
+[pid=57731 ppid=57640] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=5)...
+[pid=57731 ppid=57640] Aging: dificultad 0.00 -> 0.00 para los hijos
+
+[pid=57763 ppid=57731] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57763, 57731, 5, 1)
+[pid=57763 ppid=57731] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.80s (N=5,i=1)...
+[pid=57720 ppid=57632] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=5)...
+[pid=57720 ppid=57632] Aging: dificultad 0.00 -> 0.00 para los hijos
+[pid=57707 ppid=57634] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=5)...
+[pid=57707 ppid=57634] Aging: dificultad 0.00 -> 0.00 para los hijos
+[pid=57658 ppid=57618] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=4)...
+[pid=57658 ppid=57618] Aging: dificultad 0.00 -> 0.00 para los hijos
+[pid=57649 ppid=57616] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=4)...
+[pid=57649 ppid=57616] Aging: dificultad 0.00 -> 0.00 para los hijos
+[pid=57657 ppid=57618] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=4)...
+[pid=57657 ppid=57618] Aging: dificultad 0.00 -> 0.00 para los hijos
+[pid=57652 ppid=57618] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=4)...
+[pid=57652 ppid=57618] Aging: dificultad 0.00 -> 0.00 para los hijos
+
+[pid=57766 ppid=57707] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57766, 57707, 5, 1)
+[pid=57766 ppid=57707] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.56s (N=5,i=1)...
+[pid=57648 ppid=57618] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=4)...
+[pid=57648 ppid=57618] Aging: dificultad 0.00 -> 0.00 para los hijos
+
+[pid=57775 ppid=57657] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57775, 57657, 4, 1)
+[pid=57775 ppid=57657] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.60s (N=4,i=1)...
+[pid=57654 ppid=57617] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=4)...
+[pid=57654 ppid=57617] Aging: dificultad 0.00 -> 0.00 para los hijos
+
+[pid=57769 ppid=57649] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57769, 57649, 4, 1)
+[pid=57769 ppid=57649] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.82s (N=4,i=1)...
+
+[pid=57770 ppid=57649] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57770, 57649, 4, 2)
+[pid=57770 ppid=57649] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.83s (N=4,i=2)...
+
+[pid=57771 ppid=57649] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57771, 57649, 4, 3)
+[pid=57771 ppid=57649] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.83s (N=4,i=3)...
+
+[pid=57772 ppid=57649] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57772, 57649, 4, 4)
+[pid=57772 ppid=57649] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.59s (N=4,i=4)...
+
+[pid=57773 ppid=57649] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57773, 57649, 4, 5)
+[pid=57773 ppid=57649] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.59s (N=4,i=5)...
+
+[pid=57777 ppid=57657] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57777, 57657, 4, 3)
+[pid=57777 ppid=57657] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.61s (N=4,i=3)...
+[pid=57633 ppid=57613] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=4)...
+[pid=57633 ppid=57613] Aging: dificultad 0.00 -> 0.00 para los hijos
+
+[pid=57779 ppid=57657] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57779, 57657, 4, 4)
+[pid=57779 ppid=57657] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.62s (N=4,i=4)...
+
+[pid=57780 ppid=57657] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57780, 57657, 4, 5)
+[pid=57780 ppid=57657] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.62s (N=4,i=5)...
+
+[pid=57782 ppid=57716] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57782, 57716, 5, 2)
+[pid=57782 ppid=57716] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.88s (N=5,i=2)...
+[pid=57647 ppid=57617] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=4)...
+[pid=57647 ppid=57617] Aging: dificultad 0.00 -> 0.00 para los hijos
+
+[pid=57784 ppid=57642] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57784, 57642, 4, 1)
+[pid=57784 ppid=57642] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.89s (N=4,i=1)...
+
+[pid=57785 ppid=57642] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57785, 57642, 4, 2)
+[pid=57785 ppid=57642] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.89s (N=4,i=2)...
+
+[pid=57786 ppid=57652] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57786, 57652, 4, 2)
+[pid=57786 ppid=57652] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.65s (N=4,i=2)...
+
+[pid=57787 ppid=57652] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57787, 57652, 4, 3)
+[pid=57787 ppid=57652] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.90s (N=4,i=3)...
+[pid=57708 ppid=57634] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=5)...
+[pid=57708 ppid=57634] Aging: dificultad 0.00 -> 0.00 para los hijos
+
+[pid=57790 ppid=57652] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57790, 57652, 4, 5)
+[pid=57790 ppid=57652] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.67s (N=4,i=5)...
+
+[pid=57792 ppid=57648] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57792, 57648, 4, 1)
+[pid=57792 ppid=57648] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.93s (N=4,i=1)...
+
+[pid=57794 ppid=57654] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57794, 57654, 4, 1)
+[pid=57794 ppid=57654] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.93s (N=4,i=1)...
+
+[pid=57795 ppid=57633] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57795, 57633, 4, 1)
+[pid=57795 ppid=57633] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.94s (N=4,i=1)...
+[pid=57641 ppid=57616] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=4)...
+[pid=57641 ppid=57616] Aging: dificultad 0.00 -> 0.00 para los hijos
+[pid=57639 ppid=57614] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=4)...
+[pid=57639 ppid=57614] Aging: dificultad 0.00 -> 0.00 para los hijos
+
+[pid=57798 ppid=57708] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57798, 57708, 5, 1)
+[pid=57637 ppid=57614] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=4)...
+[pid=57637 ppid=57614] Aging: dificultad 0.00 -> 0.00 para los hijos
+
+[pid=57799 ppid=57643] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57799, 57643, 4, 3)
+
+[pid=57802 ppid=57641] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57802, 57641, 4, 1)
+[pid=57802 ppid=57641] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.97s (N=4,i=1)...
+[pid=57709 ppid=57634] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=5)...
+[pid=57709 ppid=57634] Aging: dificultad 0.00 -> 0.00 para los hijos
+
+[pid=57804 ppid=57639] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57804, 57639, 4, 1)
+[pid=57804 ppid=57639] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.98s (N=4,i=1)...
+
+[pid=57800 ppid=57643] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57800, 57643, 4, 4)
+[pid=57800 ppid=57643] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.71s (N=4,i=4)...
+
+[pid=57806 ppid=57637] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57806, 57637, 4, 1)
+[pid=57806 ppid=57637] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.74s (N=4,i=1)...
+
+[pid=57807 ppid=57709] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57807, 57709, 5, 1)
+[pid=57807 ppid=57709] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.99s (N=5,i=1)...
+[pid=57638 ppid=57614] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=4)...
+[pid=57638 ppid=57614] Aging: dificultad 0.00 -> 0.00 para los hijos
+[pid=57711 ppid=57634] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=5)...
+[pid=57711 ppid=57634] Aging: dificultad 0.00 -> 0.00 para los hijos
+
+[pid=57809 ppid=57709] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57809, 57709, 5, 3)
+[pid=57809 ppid=57709] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.75s (N=5,i=3)...
+
+[pid=57810 ppid=57709] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57810, 57709, 5, 4)
+[pid=57810 ppid=57709] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.76s (N=5,i=4)...
+
+[pid=57811 ppid=57709] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57811, 57709, 5, 5)
+[pid=57811 ppid=57709] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.51s (N=5,i=5)...
+
+[pid=57812 ppid=57638] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57812, 57638, 4, 1)
+[pid=57812 ppid=57638] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.51s (N=4,i=1)...
+
+[pid=57814 ppid=57711] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57814, 57711, 5, 2)
+[pid=57814 ppid=57711] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.52s (N=5,i=2)...
+
+[pid=57815 ppid=57711] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57815, 57711, 5, 3)
+[pid=57815 ppid=57711] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.53s (N=5,i=3)...
+[pid=57798 ppid=57708] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.95s (N=5,i=1)...
+[pid=57712 ppid=57640] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=5)...
+[pid=57712 ppid=57640] Aging: dificultad 0.00 -> 0.00 para los hijos
+
+[pid=57817 ppid=57711] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57817, 57711, 5, 5)
+[pid=57817 ppid=57711] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.79s (N=5,i=5)...
+
+[pid=57746 ppid=57722] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57746, 57722, 5, 1)
+[pid=57746 ppid=57722] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.97s (N=5,i=1)...
+
+[pid=57789 ppid=57652] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57789, 57652, 4, 4)
+[pid=57789 ppid=57652] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.66s (N=4,i=4)...
+
+[pid=57816 ppid=57711] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57816, 57711, 5, 4)
+[pid=57816 ppid=57711] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.53s (N=5,i=4)...
+[pid=57713 ppid=57640] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=5)...
+[pid=57713 ppid=57640] Aging: dificultad 0.00 -> 0.00 para los hijos
+
+[pid=57813 ppid=57711] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57813, 57711, 5, 1)
+[pid=57813 ppid=57711] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.77s (N=5,i=1)...
+
+[pid=57818 ppid=57712] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57818, 57712, 5, 1)
+[pid=57799 ppid=57643] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.71s (N=4,i=3)...
+
+[pid=57821 ppid=57713] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57821, 57713, 5, 2)
+[pid=57821 ppid=57713] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.56s (N=5,i=2)...
+
+[pid=57749 ppid=57651] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57749, 57651, 4, 1)
+[pid=57749 ppid=57651] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.73s (N=4,i=1)...
+
+[pid=57755 ppid=57729] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57755, 57729, 5, 1)
+[pid=57755 ppid=57729] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.51s (N=5,i=1)...
+
+[pid=57822 ppid=57713] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57822, 57713, 5, 3)
+[pid=57822 ppid=57713] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.56s (N=5,i=3)...
+
+[pid=57781 ppid=57652] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57781, 57652, 4, 1)
+[pid=57781 ppid=57652] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.63s (N=4,i=1)...
+
+[pid=57824 ppid=57713] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57824, 57713, 5, 4)
+[pid=57824 ppid=57713] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.57s (N=5,i=4)...
+
+[pid=57757 ppid=57650] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57757, 57650, 4, 2)
+[pid=57757 ppid=57650] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.77s (N=4,i=2)...
+
+[pid=57758 ppid=57726] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57758, 57726, 5, 1)
+[pid=57758 ppid=57726] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.77s (N=5,i=1)...
+[pid=57717 ppid=57631] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=5)...
+[pid=57717 ppid=57631] Aging: dificultad 0.00 -> 0.00 para los hijos
+
+[pid=57825 ppid=57713] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57825, 57713, 5, 5)
+[pid=57825 ppid=57713] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.82s (N=5,i=5)...
+[pid=57718 ppid=57631] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=5)...
+[pid=57718 ppid=57631] Aging: dificultad 0.00 -> 0.00 para los hijos
+
+[pid=57826 ppid=57717] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57826, 57717, 5, 1)
+[pid=57826 ppid=57717] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.58s (N=5,i=1)...
+[pid=57724 ppid=57635] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=5)...
+[pid=57724 ppid=57635] Aging: dificultad 0.00 -> 0.00 para los hijos
+
+[pid=57820 ppid=57713] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57820, 57713, 5, 1)
+[pid=57820 ppid=57713] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.55s (N=5,i=1)...
+
+[pid=57828 ppid=57717] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57828, 57717, 5, 3)
+[pid=57828 ppid=57717] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.84s (N=5,i=3)...
+
+[pid=57829 ppid=57717] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57829, 57717, 5, 4)
+[pid=57829 ppid=57717] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.84s (N=5,i=4)...
+
+[pid=57830 ppid=57717] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57830, 57717, 5, 5)
+[pid=57830 ppid=57717] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.85s (N=5,i=5)...
+[pid=57728 ppid=57631] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=5)...
+[pid=57728 ppid=57631] Aging: dificultad 0.00 -> 0.00 para los hijos
+[pid=57710 ppid=57634] ¡Necesito ayuda! Creando 5 Meeseeks hijos (N=5)...
+[pid=57710 ppid=57634] Aging: dificultad 0.00 -> 0.00 para los hijos
+
+[pid=57831 ppid=57718] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57831, 57718, 5, 1)
+[pid=57831 ppid=57718] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.60s (N=5,i=1)...
+
+[pid=57832 ppid=57724] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57832, 57724, 5, 1)
+[pid=57832 ppid=57724] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.60s (N=5,i=1)...
+
+[pid=57833 ppid=57724] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57833, 57724, 5, 2)
+[pid=57833 ppid=57724] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.61s (N=5,i=2)...
+
+[pid=57834 ppid=57724] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57834, 57724, 5, 3)
+[pid=57834 ppid=57724] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.61s (N=5,i=3)...
+
+[pid=57836 ppid=57728] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57836, 57728, 5, 1)
+[pid=57836 ppid=57728] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.87s (N=5,i=1)...
+
+[pid=57760 ppid=57716] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57760, 57716, 5, 1)
+[pid=57760 ppid=57716] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.53s (N=5,i=1)...
+
+[pid=57838 ppid=57710] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57838, 57710, 5, 1)
+[pid=57838 ppid=57710] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.88s (N=5,i=1)...
+
+[pid=57841 ppid=57715] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57841, 57715, 5, 2)
+[pid=57841 ppid=57715] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.90s (N=5,i=2)...
+
+[pid=57843 ppid=57658] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57843, 57658, 4, 2)
+[pid=57843 ppid=57658] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.90s (N=4,i=2)...
+
+[pid=57844 ppid=57658] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57844, 57658, 4, 3)
+[pid=57844 ppid=57658] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.66s (N=4,i=3)...
+
+[pid=57845 ppid=57658] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57845, 57658, 4, 4)
+[pid=57845 ppid=57658] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.91s (N=4,i=4)...
+
+[pid=57840 ppid=57650] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57840, 57650, 4, 3)
+[pid=57840 ppid=57650] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.64s (N=4,i=3)...
+
+[pid=57764 ppid=57731] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57764, 57731, 5, 2)
+[pid=57764 ppid=57731] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.55s (N=5,i=2)...
+
+[pid=57765 ppid=57720] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57765, 57720, 5, 1)
+[pid=57765 ppid=57720] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.81s (N=5,i=1)...
+
+[pid=57847 ppid=57633] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57847, 57633, 4, 3)
+[pid=57847 ppid=57633] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.67s (N=4,i=3)...
+
+[pid=57848 ppid=57633] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57848, 57633, 4, 4)
+[pid=57848 ppid=57633] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.93s (N=4,i=4)...
+
+[pid=57849 ppid=57633] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57849, 57633, 4, 5)
+[pid=57849 ppid=57633] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.93s (N=4,i=5)...
+
+[pid=57851 ppid=57647] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57851, 57647, 4, 2)
+[pid=57851 ppid=57647] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.94s (N=4,i=2)...
+
+[pid=57853 ppid=57641] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57853, 57641, 4, 3)
+[pid=57853 ppid=57641] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.70s (N=4,i=3)...
+
+[pid=57855 ppid=57727] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57855, 57727, 5, 4)
+[pid=57855 ppid=57727] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.96s (N=5,i=4)...
+
+[pid=57856 ppid=57639] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57856, 57639, 4, 3)
+[pid=57856 ppid=57639] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.96s (N=4,i=3)...
+
+[pid=57857 ppid=57727] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57857, 57727, 5, 5)
+[pid=57857 ppid=57727] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.72s (N=5,i=5)...
+
+[pid=57862 ppid=57723] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57862, 57723, 5, 2)
+[pid=57862 ppid=57723] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.74s (N=5,i=2)...
+
+[pid=57863 ppid=57723] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57863, 57723, 5, 3)
+[pid=57863 ppid=57723] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.74s (N=5,i=3)...
+
+[pid=57859 ppid=57637] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57859, 57637, 4, 2)
+[pid=57859 ppid=57637] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.72s (N=4,i=2)...
+
+[pid=57864 ppid=57731] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57864, 57731, 5, 4)
+[pid=57864 ppid=57731] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.75s (N=5,i=4)...
+
+[pid=57860 ppid=57637] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57860, 57637, 4, 3)
+[pid=57860 ppid=57637] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.98s (N=4,i=3)...
+
+[pid=57866 ppid=57731] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57866, 57731, 5, 5)
+[pid=57866 ppid=57731] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.76s (N=5,i=5)...
+
+[pid=57823 ppid=57727] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57823, 57727, 5, 3)
+[pid=57823 ppid=57727] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.56s (N=5,i=3)...
+
+[pid=57819 ppid=57712] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57819, 57712, 5, 2)
+[pid=57819 ppid=57712] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.55s (N=5,i=2)...
+
+[pid=57871 ppid=57712] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57871, 57712, 5, 3)
+[pid=57871 ppid=57712] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.78s (N=5,i=3)...
+
+[pid=57872 ppid=57712] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57872, 57712, 5, 4)
+[pid=57872 ppid=57712] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.78s (N=5,i=4)...
+
+[pid=57873 ppid=57712] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57873, 57712, 5, 5)
+[pid=57873 ppid=57712] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.79s (N=5,i=5)...
+
+[pid=57768 ppid=57658] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57768, 57658, 4, 1)
+[pid=57768 ppid=57658] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.57s (N=4,i=1)...
+
+[pid=57874 ppid=57648] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57874, 57648, 4, 3)
+[pid=57874 ppid=57648] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.79s (N=4,i=3)...
+
+[pid=57875 ppid=57648] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57875, 57648, 4, 4)
+[pid=57875 ppid=57648] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.80s (N=4,i=4)...
+
+[pid=57877 ppid=57728] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57877, 57728, 5, 3)
+[pid=57877 ppid=57728] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.55s (N=5,i=3)...
+
+[pid=57878 ppid=57728] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57878, 57728, 5, 4)
+[pid=57878 ppid=57728] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.81s (N=5,i=4)...
+
+[pid=57733 ppid=57715] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57733, 57715, 5, 1)
+[pid=57733 ppid=57715] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.66s (N=5,i=1)...
+
+[pid=57880 ppid=57718] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57880, 57718, 5, 2)
+[pid=57880 ppid=57718] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.57s (N=5,i=2)...
+
+[pid=57882 ppid=57646] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57882, 57646, 4, 2)
+[pid=57882 ppid=57646] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.58s (N=4,i=2)...
+
+[pid=57884 ppid=57716] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57884, 57716, 5, 4)
+[pid=57884 ppid=57716] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.59s (N=5,i=4)...
+
+[pid=57885 ppid=57716] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57885, 57716, 5, 5)
+[pid=57885 ppid=57716] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.59s (N=5,i=5)...
+
+[pid=57886 ppid=57644] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57886, 57644, 4, 1)
+[pid=57886 ppid=57644] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.59s (N=4,i=1)...
+
+[pid=57887 ppid=57644] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57887, 57644, 4, 2)
+[pid=57887 ppid=57644] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.85s (N=4,i=2)...
+
+[pid=57888 ppid=57644] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57888, 57644, 4, 3)
+[pid=57888 ppid=57644] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.60s (N=4,i=3)...
+
+[pid=57889 ppid=57644] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57889, 57644, 4, 4)
+[pid=57889 ppid=57644] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.61s (N=4,i=4)...
+
+[pid=57890 ppid=57644] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57890, 57644, 4, 5)
+[pid=57890 ppid=57644] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.61s (N=4,i=5)...
+
+[pid=57796 ppid=57633] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57796, 57633, 4, 2)
+[pid=57796 ppid=57633] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.94s (N=4,i=2)...
+
+[pid=57891 ppid=57645] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57891, 57645, 4, 3)
+[pid=57891 ppid=57645] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.62s (N=4,i=3)...
+
+[pid=57797 ppid=57647] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57797, 57647, 4, 1)
+[pid=57797 ppid=57647] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.70s (N=4,i=1)...
+
+[pid=57893 ppid=57710] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57893, 57710, 5, 3)
+[pid=57893 ppid=57710] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.62s (N=5,i=3)...
+
+[pid=57894 ppid=57710] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57894, 57710, 5, 4)
+[pid=57894 ppid=57710] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.63s (N=5,i=4)...
+
+[pid=57895 ppid=57710] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57895, 57710, 5, 5)
+[pid=57895 ppid=57710] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.64s (N=5,i=5)...
+
+[pid=57803 ppid=57641] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57803, 57641, 4, 2)
+[pid=57803 ppid=57641] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.73s (N=4,i=2)...
+
+[pid=57805 ppid=57639] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57805, 57639, 4, 2)
+[pid=57805 ppid=57639] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.98s (N=4,i=2)...
+
+[pid=57896 ppid=57654] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57896, 57654, 4, 2)
+[pid=57896 ppid=57654] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.89s (N=4,i=2)...
+
+[pid=57897 ppid=57654] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57897, 57654, 4, 3)
+[pid=57897 ppid=57654] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.64s (N=4,i=3)...
+
+[pid=57898 ppid=57654] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57898, 57654, 4, 4)
+[pid=57898 ppid=57654] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.90s (N=4,i=4)...
+
+[pid=57899 ppid=57654] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57899, 57654, 4, 5)
+[pid=57899 ppid=57654] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.65s (N=4,i=5)...
+
+[pid=57837 ppid=57728] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57837, 57728, 5, 2)
+[pid=57837 ppid=57728] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.63s (N=5,i=2)...
+
+[pid=57793 ppid=57648] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57793, 57648, 4, 2)
+[pid=57793 ppid=57648] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.93s (N=4,i=2)...
+
+[pid=57900 ppid=57638] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57900, 57638, 4, 2)
+[pid=57900 ppid=57638] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.66s (N=4,i=2)...
+
+[pid=57901 ppid=57638] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57901, 57638, 4, 3)
+[pid=57901 ppid=57638] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.66s (N=4,i=3)...
+
+[pid=57902 ppid=57638] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57902, 57638, 4, 4)
+[pid=57902 ppid=57638] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.92s (N=4,i=4)...
+
+[pid=57904 ppid=57724] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57904, 57724, 5, 5)
+[pid=57904 ppid=57724] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.68s (N=5,i=5)...
+
+[pid=57905 ppid=57641] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57905, 57641, 4, 5)
+[pid=57905 ppid=57641] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.93s (N=4,i=5)...
+
+[pid=57735 ppid=57646] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57735, 57646, 4, 1)
+[pid=57735 ppid=57646] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.67s (N=4,i=1)...
+
+[pid=57737 ppid=57645] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57737, 57645, 4, 2)
+[pid=57737 ppid=57645] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.68s (N=4,i=2)...
+
+[pid=57906 ppid=57708] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57906, 57708, 5, 3)
+[pid=57906 ppid=57708] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.93s (N=5,i=3)...
+
+[pid=57907 ppid=57708] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57907, 57708, 5, 4)
+[pid=57907 ppid=57708] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.94s (N=5,i=4)...
+
+[pid=57908 ppid=57708] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57908, 57708, 5, 5)
+[pid=57908 ppid=57708] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.94s (N=5,i=5)...
+
+[pid=57839 ppid=57710] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57839, 57710, 5, 2)
+[pid=57839 ppid=57710] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.89s (N=5,i=2)...
+
+[pid=57909 ppid=57637] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57909, 57637, 4, 5)
+[pid=57909 ppid=57637] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.70s (N=4,i=5)...
+
+[pid=57835 ppid=57724] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57835, 57724, 5, 4)
+[pid=57835 ppid=57724] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.87s (N=5,i=4)...
+
+[pid=57854 ppid=57641] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57854, 57641, 4, 4)
+[pid=57854 ppid=57641] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.95s (N=4,i=4)...
+
+[pid=57783 ppid=57716] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57783, 57716, 5, 3)
+[pid=57783 ppid=57716] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.89s (N=5,i=3)...
+
+[pid=57827 ppid=57717] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57827, 57717, 5, 2)
+[pid=57827 ppid=57717] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.58s (N=5,i=2)...
+
+[pid=57741 ppid=57643] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57741, 57643, 4, 2)
+[pid=57741 ppid=57643] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.95s (N=4,i=2)...
+
+[pid=57742 ppid=57719] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57742, 57719, 5, 1)
+[pid=57742 ppid=57719] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.95s (N=5,i=1)...
+
+[pid=57748 ppid=57727] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57748, 57727, 5, 2)
+[pid=57748 ppid=57727] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.98s (N=5,i=2)...
+
+[pid=57791 ppid=57731] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57791, 57731, 5, 3)
+[pid=57791 ppid=57731] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.92s (N=5,i=3)...
+
+[pid=57776 ppid=57657] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57776, 57657, 4, 2)
+[pid=57776 ppid=57657] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.86s (N=4,i=2)...
+
+[pid=57788 ppid=57642] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57788, 57642, 4, 3)
+[pid=57788 ppid=57642] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.91s (N=4,i=3)...
+
+[pid=57762 ppid=57653] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57762, 57653, 4, 1)
+[pid=57762 ppid=57653] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.79s (N=4,i=1)...
+
+[pid=57774 ppid=57722] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57774, 57722, 5, 2)
+[pid=57774 ppid=57722] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.84s (N=5,i=2)...
+
+[pid=57744 ppid=57725] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57744, 57725, 5, 2)
+[pid=57744 ppid=57725] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.71s (N=5,i=2)...
+[pid=57818 ppid=57712] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.79s (N=5,i=1)...
+
+[pid=57754 ppid=57721] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57754, 57721, 5, 1)
+[pid=57754 ppid=57721] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.75s (N=5,i=1)...
+
+[pid=57761 ppid=57730] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57761, 57730, 5, 2)
+[pid=57761 ppid=57730] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.54s (N=5,i=2)...
+
+[pid=57808 ppid=57709] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57808, 57709, 5, 2)
+[pid=57808 ppid=57709] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 1.00s (N=5,i=2)...
+
+[pid=57767 ppid=57707] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57767, 57707, 5, 2)
+[pid=57767 ppid=57707] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.57s (N=5,i=2)...
+
+[pid=57739 ppid=57714] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57739, 57714, 5, 2)
+[pid=57739 ppid=57714] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.69s (N=5,i=2)...
+
+[pid=57861 ppid=57637] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57861, 57637, 4, 4)
+[pid=57861 ppid=57637] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.74s (N=4,i=4)...
+
+[pid=57778 ppid=57729] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57778, 57729, 5, 2)
+[pid=57778 ppid=57729] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.86s (N=5,i=2)...
+
+[pid=57870 ppid=57708] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57870, 57708, 5, 2)
+[pid=57870 ppid=57708] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.77s (N=5,i=2)...
+
+[pid=57858 ppid=57639] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57858, 57639, 4, 4)
+[pid=57858 ppid=57639] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.97s (N=4,i=4)...
+
+[pid=57915 ppid=57639] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57915, 57639, 4, 5)
+[pid=57915 ppid=57639] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.73s (N=4,i=5)...
+
+[pid=57916 ppid=57646] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57916, 57646, 4, 4)
+[pid=57916 ppid=57646] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.73s (N=4,i=4)...
+
+[pid=57917 ppid=57646] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57917, 57646, 4, 5)
+[pid=57917 ppid=57646] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.73s (N=4,i=5)...
+
+[pid=57876 ppid=57648] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57876, 57648, 4, 5)
+[pid=57876 ppid=57648] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.80s (N=4,i=5)...
+
+[pid=57879 ppid=57728] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57879, 57728, 5, 5)
+[pid=57879 ppid=57728] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.81s (N=5,i=5)...
+
+[pid=57918 ppid=57645] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57918, 57645, 4, 5)
+[pid=57918 ppid=57645] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.99s (N=4,i=5)...
+
+[pid=57846 ppid=57658] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57846, 57658, 4, 5)
+[pid=57846 ppid=57658] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.67s (N=4,i=5)...
+
+[pid=57881 ppid=57718] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57881, 57718, 5, 3)
+[pid=57881 ppid=57718] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.82s (N=5,i=3)...
+
+[pid=57883 ppid=57646] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57883, 57646, 4, 3)
+[pid=57883 ppid=57646] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.58s (N=4,i=3)...
+
+[pid=57801 ppid=57643] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57801, 57643, 4, 5)
+[pid=57801 ppid=57643] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.97s (N=4,i=5)...
+
+[pid=57920 ppid=57642] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57920, 57642, 4, 4)
+[pid=57920 ppid=57642] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 1.00s (N=4,i=4)...
+
+[pid=57842 ppid=57650] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57842, 57650, 4, 4)
+[pid=57842 ppid=57650] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.90s (N=4,i=4)...
+
+[pid=57921 ppid=57642] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57921, 57642, 4, 5)
+[pid=57921 ppid=57642] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.75s (N=4,i=5)...
+
+[pid=57922 ppid=57650] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57922, 57650, 4, 5)
+[pid=57922 ppid=57650] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.76s (N=4,i=5)...
+
+[pid=57923 ppid=57725] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57923, 57725, 5, 3)
+[pid=57923 ppid=57725] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.51s (N=5,i=3)...
+
+[pid=57924 ppid=57653] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57924, 57653, 4, 2)
+[pid=57924 ppid=57653] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.52s (N=4,i=2)...
+
+[pid=57925 ppid=57725] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57925, 57725, 5, 4)
+[pid=57925 ppid=57725] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.52s (N=5,i=4)...
+
+[pid=57926 ppid=57725] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57926, 57725, 5, 5)
+[pid=57926 ppid=57725] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.77s (N=5,i=5)...
+
+[pid=57927 ppid=57653] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57927, 57653, 4, 3)
+[pid=57927 ppid=57653] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.53s (N=4,i=3)...
+
+[pid=57930 ppid=57721] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57930, 57721, 5, 2)
+[pid=57930 ppid=57721] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.79s (N=5,i=2)...
+
+[pid=57931 ppid=57721] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57931, 57721, 5, 3)
+[pid=57931 ppid=57721] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.55s (N=5,i=3)...
+
+[pid=57932 ppid=57721] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57932, 57721, 5, 4)
+[pid=57932 ppid=57721] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.55s (N=5,i=4)...
+
+[pid=57928 ppid=57653] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57928, 57653, 4, 4)
+[pid=57928 ppid=57653] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.53s (N=4,i=4)...
+
+[pid=57929 ppid=57653] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57929, 57653, 4, 5)
+[pid=57929 ppid=57653] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.54s (N=4,i=5)...
+
+[pid=57934 ppid=57730] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57934, 57730, 5, 3)
+[pid=57934 ppid=57730] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.56s (N=5,i=3)...
+
+[pid=57935 ppid=57730] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57935, 57730, 5, 4)
+[pid=57935 ppid=57730] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.57s (N=5,i=4)...
+
+[pid=57936 ppid=57730] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57936, 57730, 5, 5)
+[pid=57936 ppid=57730] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.82s (N=5,i=5)...
+
+[pid=57937 ppid=57647] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57937, 57647, 4, 4)
+[pid=57937 ppid=57647] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.82s (N=4,i=4)...
+
+[pid=57938 ppid=57647] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57938, 57647, 4, 5)
+[pid=57938 ppid=57647] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.83s (N=4,i=5)...
+
+[pid=57892 ppid=57645] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57892, 57645, 4, 4)
+[pid=57892 ppid=57645] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.62s (N=4,i=4)...
+
+[pid=57903 ppid=57638] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57903, 57638, 4, 5)
+
+[pid=57939 ppid=57723] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57939, 57723, 5, 5)
+[pid=57939 ppid=57723] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.83s (N=5,i=5)...
+[pid=57903 ppid=57638] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.67s (N=4,i=5)...
+
+[pid=57940 ppid=57719] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57940, 57719, 5, 3)
+[pid=57940 ppid=57719] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.84s (N=5,i=3)...
+
+[pid=57941 ppid=57719] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57941, 57719, 5, 4)
+[pid=57941 ppid=57719] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.84s (N=5,i=4)...
+
+[pid=57852 ppid=57647] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57852, 57647, 4, 3)
+[pid=57852 ppid=57647] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.69s (N=4,i=3)...
+
+[pid=57865 ppid=57723] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57865, 57723, 5, 4)
+[pid=57865 ppid=57723] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.75s (N=5,i=4)...
+
+[pid=57919 ppid=57719] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57919, 57719, 5, 2)
+[pid=57919 ppid=57719] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.99s (N=5,i=2)...
+
+[pid=57933 ppid=57721] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57933, 57721, 5, 5)
+[pid=57933 ppid=57721] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.55s (N=5,i=5)...
+
+[pid=57943 ppid=57722] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57943, 57722, 5, 3)
+[pid=57943 ppid=57722] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.85s (N=5,i=3)...
+
+[pid=57944 ppid=57726] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57944, 57726, 5, 2)
+
+[pid=57945 ppid=57714] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57945, 57714, 5, 3)
+[pid=57945 ppid=57714] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.61s (N=5,i=3)...
+[pid=57944 ppid=57726] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.86s (N=5,i=2)...
+
+[pid=57942 ppid=57719] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57942, 57719, 5, 5)
+[pid=57942 ppid=57719] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.85s (N=5,i=5)...
+
+[pid=57946 ppid=57729] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57946, 57729, 5, 3)
+[pid=57946 ppid=57729] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.61s (N=5,i=3)...
+
+[pid=57947 ppid=57722] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57947, 57722, 5, 4)
+[pid=57947 ppid=57722] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.87s (N=5,i=4)...
+
+[pid=57948 ppid=57722] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57948, 57722, 5, 5)
+[pid=57948 ppid=57722] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.62s (N=5,i=5)...
+
+[pid=57949 ppid=57720] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57949, 57720, 5, 2)
+[pid=57949 ppid=57720] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.88s (N=5,i=2)...
+
+[pid=57950 ppid=57720] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57950, 57720, 5, 3)
+[pid=57950 ppid=57720] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.88s (N=5,i=3)...
+
+[pid=57952 ppid=57707] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57952, 57707, 5, 3)
+
+[pid=57953 ppid=57707] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57953, 57707, 5, 4)
+[pid=57953 ppid=57707] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.64s (N=5,i=4)...
+
+[pid=57954 ppid=57707] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57954, 57707, 5, 5)
+[pid=57954 ppid=57707] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.65s (N=5,i=5)...
+[pid=57952 ppid=57707] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.89s (N=5,i=3)...
+
+[pid=57958 ppid=57715] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57958, 57715, 5, 3)
+[pid=57958 ppid=57715] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.92s (N=5,i=3)...
+
+[pid=57959 ppid=57715] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57959, 57715, 5, 4)
+[pid=57959 ppid=57715] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.67s (N=5,i=4)...
+
+[pid=57960 ppid=57715] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57960, 57715, 5, 5)
+[pid=57960 ppid=57715] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.68s (N=5,i=5)...
+
+[pid=57961 ppid=57720] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57961, 57720, 5, 5)
+[pid=57961 ppid=57720] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.93s (N=5,i=5)...
+
+[pid=57962 ppid=57714] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57962, 57714, 5, 4)
+[pid=57962 ppid=57714] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.69s (N=5,i=4)...
+
+[pid=57963 ppid=57714] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57963, 57714, 5, 5)
+[pid=57963 ppid=57714] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.94s (N=5,i=5)...
+
+[pid=57955 ppid=57726] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57955, 57726, 5, 3)
+[pid=57955 ppid=57726] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.90s (N=5,i=3)...
+
+[pid=57956 ppid=57726] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57956, 57726, 5, 4)
+[pid=57956 ppid=57726] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.66s (N=5,i=4)...
+
+[pid=57957 ppid=57726] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57957, 57726, 5, 5)
+[pid=57957 ppid=57726] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.66s (N=5,i=5)...
+
+[pid=57965 ppid=57718] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57965, 57718, 5, 5)
+[pid=57965 ppid=57718] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.70s (N=5,i=5)...
+
+[pid=57964 ppid=57718] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57964, 57718, 5, 4)
+[pid=57964 ppid=57718] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.69s (N=5,i=4)...
+
+[pid=57951 ppid=57720] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57951, 57720, 5, 4)
+[pid=57951 ppid=57720] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.64s (N=5,i=4)...
+
+[pid=57966 ppid=57729] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57966, 57729, 5, 4)
+[pid=57966 ppid=57729] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.95s (N=5,i=4)...
+
+[pid=57967 ppid=57729] Hi, I'm Mr. Meeseeks! Look at Meeeee. (57967, 57729, 5, 5)
+[pid=57967 ppid=57729] Caso A: 'Quiero ser omnipotente' dificultad=0.00, trabajando 0.71s (N=5,i=5)...
+[pid=57756 ppid=57650] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57756 ppid=57650] Meeseeks (N=4,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57811 ppid=57709] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57811 ppid=57709] Meeseeks (N=5,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57755 ppid=57729] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57755 ppid=57729] Meeseeks (N=5,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57812 ppid=57638] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57812 ppid=57638] Meeseeks (N=4,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57814 ppid=57711] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57814 ppid=57711] Meeseeks (N=5,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57815 ppid=57711] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57815 ppid=57711] Meeseeks (N=5,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57766 ppid=57707] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57766 ppid=57707] Meeseeks (N=5,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57816 ppid=57711] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57816 ppid=57711] Meeseeks (N=5,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57764 ppid=57731] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57764 ppid=57731] Meeseeks (N=5,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57760 ppid=57716] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57760 ppid=57716] Meeseeks (N=5,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57790 ppid=57652] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57790 ppid=57652] Meeseeks (N=4,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57780 ppid=57657] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57780 ppid=57657] Meeseeks (N=4,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57775 ppid=57657] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57775 ppid=57657] Meeseeks (N=4,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57786 ppid=57652] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57786 ppid=57652] Meeseeks (N=4,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57779 ppid=57657] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57779 ppid=57657] Meeseeks (N=4,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57747 ppid=57727] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57747 ppid=57727] Meeseeks (N=5,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57743 ppid=57725] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57743 ppid=57725] Meeseeks (N=5,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57823 ppid=57727] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57823 ppid=57727] Meeseeks (N=5,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57777 ppid=57657] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57777 ppid=57657] Meeseeks (N=4,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57826 ppid=57717] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57826 ppid=57717] Meeseeks (N=5,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57819 ppid=57712] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57819 ppid=57712] Meeseeks (N=5,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57736 ppid=57645] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57736 ppid=57645] Meeseeks (N=4,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57824 ppid=57713] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57824 ppid=57713] Meeseeks (N=5,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57773 ppid=57649] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57773 ppid=57649] Meeseeks (N=4,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57734 ppid=57723] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57734 ppid=57723] Meeseeks (N=5,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57822 ppid=57713] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57822 ppid=57713] Meeseeks (N=5,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57772 ppid=57649] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57772 ppid=57649] Meeseeks (N=4,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57821 ppid=57713] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57821 ppid=57713] Meeseeks (N=5,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57820 ppid=57713] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57820 ppid=57713] Meeseeks (N=5,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57767 ppid=57707] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57767 ppid=57707] Meeseeks (N=5,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57883 ppid=57646] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57883 ppid=57646] Meeseeks (N=4,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57933 ppid=57721] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57933 ppid=57721] Meeseeks (N=5,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57833 ppid=57724] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57833 ppid=57724] Meeseeks (N=5,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57834 ppid=57724] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57834 ppid=57724] Meeseeks (N=5,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57832 ppid=57724] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57832 ppid=57724] Meeseeks (N=5,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57929 ppid=57653] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57929 ppid=57653] Meeseeks (N=4,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57928 ppid=57653] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57928 ppid=57653] Meeseeks (N=4,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57891 ppid=57645] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57891 ppid=57645] Meeseeks (N=4,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57893 ppid=57710] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57893 ppid=57710] Meeseeks (N=5,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57886 ppid=57644] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57886 ppid=57644] Meeseeks (N=4,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57827 ppid=57717] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57827 ppid=57717] Meeseeks (N=5,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57837 ppid=57728] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57837 ppid=57728] Meeseeks (N=5,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57934 ppid=57730] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57934 ppid=57730] Meeseeks (N=5,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57888 ppid=57644] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57888 ppid=57644] Meeseeks (N=4,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57935 ppid=57730] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57935 ppid=57730] Meeseeks (N=5,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57889 ppid=57644] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57889 ppid=57644] Meeseeks (N=4,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57890 ppid=57644] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57890 ppid=57644] Meeseeks (N=4,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57882 ppid=57646] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57882 ppid=57646] Meeseeks (N=4,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57931 ppid=57721] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57931 ppid=57721] Meeseeks (N=5,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57884 ppid=57716] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57884 ppid=57716] Meeseeks (N=5,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57932 ppid=57721] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57932 ppid=57721] Meeseeks (N=5,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57885 ppid=57716] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57885 ppid=57716] Meeseeks (N=5,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57768 ppid=57658] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57768 ppid=57658] Meeseeks (N=4,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57761 ppid=57730] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57761 ppid=57730] Meeseeks (N=5,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57831 ppid=57718] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57831 ppid=57718] Meeseeks (N=5,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57880 ppid=57718] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57880 ppid=57718] Meeseeks (N=5,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57927 ppid=57653] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57927 ppid=57653] Meeseeks (N=4,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57840 ppid=57650] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57789 ppid=57652] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57789 ppid=57652] Meeseeks (N=4,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57840 ppid=57650] Meeseeks (N=4,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57781 ppid=57652] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57781 ppid=57652] Meeseeks (N=4,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57925 ppid=57725] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57925 ppid=57725] Meeseeks (N=5,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57924 ppid=57653] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57923 ppid=57725] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57923 ppid=57725] Meeseeks (N=5,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57877 ppid=57728] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57877 ppid=57728] Meeseeks (N=5,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57894 ppid=57710] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57894 ppid=57710] Meeseeks (N=5,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57844 ppid=57658] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57844 ppid=57658] Meeseeks (N=4,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57924 ppid=57653] Meeseeks (N=4,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57895 ppid=57710] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57895 ppid=57710] Meeseeks (N=5,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57847 ppid=57633] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57847 ppid=57633] Meeseeks (N=4,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57899 ppid=57654] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57899 ppid=57654] Meeseeks (N=4,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57733 ppid=57715] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57733 ppid=57715] Meeseeks (N=5,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57800 ppid=57643] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57800 ppid=57643] Meeseeks (N=4,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57799 ppid=57643] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57799 ppid=57643] Meeseeks (N=4,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57897 ppid=57654] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57897 ppid=57654] Meeseeks (N=4,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57892 ppid=57645] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57892 ppid=57645] Meeseeks (N=4,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57900 ppid=57638] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57900 ppid=57638] Meeseeks (N=4,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57753 ppid=57651] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57753 ppid=57651] Meeseeks (N=4,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57901 ppid=57638] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57901 ppid=57638] Meeseeks (N=4,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57945 ppid=57714] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57945 ppid=57714] Meeseeks (N=5,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57735 ppid=57646] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57735 ppid=57646] Meeseeks (N=4,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57946 ppid=57729] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57946 ppid=57729] Meeseeks (N=5,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57806 ppid=57637] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57806 ppid=57637] Meeseeks (N=4,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57759 ppid=57730] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57759 ppid=57730] Meeseeks (N=5,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57904 ppid=57724] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57904 ppid=57724] Meeseeks (N=5,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57749 ppid=57651] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57749 ppid=57651] Meeseeks (N=4,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57797 ppid=57647] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57797 ppid=57647] Meeseeks (N=4,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57846 ppid=57658] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57846 ppid=57658] Meeseeks (N=4,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57909 ppid=57637] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57909 ppid=57637] Meeseeks (N=4,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57857 ppid=57727] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57857 ppid=57727] Meeseeks (N=5,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57737 ppid=57645] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57737 ppid=57645] Meeseeks (N=4,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57853 ppid=57641] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57853 ppid=57641] Meeseeks (N=4,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57948 ppid=57722] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57948 ppid=57722] Meeseeks (N=5,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57809 ppid=57709] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57809 ppid=57709] Meeseeks (N=5,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57763 ppid=57731] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57763 ppid=57731] Meeseeks (N=5,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57810 ppid=57709] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57810 ppid=57709] Meeseeks (N=5,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57739 ppid=57714] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57739 ppid=57714] Meeseeks (N=5,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57903 ppid=57638] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57903 ppid=57638] Meeseeks (N=4,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57859 ppid=57637] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57859 ppid=57637] Meeseeks (N=4,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57862 ppid=57723] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57862 ppid=57723] Meeseeks (N=5,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57803 ppid=57641] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57803 ppid=57641] Meeseeks (N=4,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57953 ppid=57707] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57953 ppid=57707] Meeseeks (N=5,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57954 ppid=57707] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57954 ppid=57707] Meeseeks (N=5,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57863 ppid=57723] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57863 ppid=57723] Meeseeks (N=5,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57951 ppid=57720] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57951 ppid=57720] Meeseeks (N=5,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57744 ppid=57725] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57744 ppid=57725] Meeseeks (N=5,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57864 ppid=57731] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57864 ppid=57731] Meeseeks (N=5,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57852 ppid=57647] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57852 ppid=57647] Meeseeks (N=4,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57817 ppid=57711] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57817 ppid=57711] Meeseeks (N=5,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57758 ppid=57726] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57758 ppid=57726] Meeseeks (N=5,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57757 ppid=57650] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57757 ppid=57650] Meeseeks (N=4,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57866 ppid=57731] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57866 ppid=57731] Meeseeks (N=5,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57915 ppid=57639] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57915 ppid=57639] Meeseeks (N=4,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57916 ppid=57646] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57916 ppid=57646] Meeseeks (N=4,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57917 ppid=57646] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57917 ppid=57646] Meeseeks (N=4,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57861 ppid=57637] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57861 ppid=57637] Meeseeks (N=4,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57959 ppid=57715] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57959 ppid=57715] Meeseeks (N=5,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57960 ppid=57715] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57960 ppid=57715] Meeseeks (N=5,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57871 ppid=57712] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57871 ppid=57712] Meeseeks (N=5,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57770 ppid=57649] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57770 ppid=57649] Meeseeks (N=4,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57956 ppid=57726] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57956 ppid=57726] Meeseeks (N=5,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57813 ppid=57711] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57813 ppid=57711] Meeseeks (N=5,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57957 ppid=57726] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57957 ppid=57726] Meeseeks (N=5,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57769 ppid=57649] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57769 ppid=57649] Meeseeks (N=4,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57711 ppid=57634] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57711 ppid=57634] Meeseeks (N=4,i=5) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57771 ppid=57649] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57771 ppid=57649] Meeseeks (N=4,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57825 ppid=57713] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57825 ppid=57713] Meeseeks (N=5,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57649 ppid=57616] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57649 ppid=57616] Meeseeks (N=3,i=3) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57646 ppid=57617] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57646 ppid=57617] Meeseeks (N=3,i=2) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57962 ppid=57714] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57962 ppid=57714] Meeseeks (N=5,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57921 ppid=57642] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57921 ppid=57642] Meeseeks (N=4,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57874 ppid=57648] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57874 ppid=57648] Meeseeks (N=4,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57873 ppid=57712] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57873 ppid=57712] Meeseeks (N=5,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57754 ppid=57721] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57754 ppid=57721] Meeseeks (N=5,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57872 ppid=57712] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57872 ppid=57712] Meeseeks (N=5,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57765 ppid=57720] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57765 ppid=57720] Meeseeks (N=5,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57828 ppid=57717] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57828 ppid=57717] Meeseeks (N=5,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57870 ppid=57708] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57870 ppid=57708] Meeseeks (N=5,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57965 ppid=57718] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57965 ppid=57718] Meeseeks (N=5,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57713 ppid=57640] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57713 ppid=57640] Meeseeks (N=4,i=2) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57829 ppid=57717] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57829 ppid=57717] Meeseeks (N=5,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57740 ppid=57643] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57740 ppid=57643] Meeseeks (N=4,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57865 ppid=57723] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57865 ppid=57723] Meeseeks (N=5,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57738 ppid=57714] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57738 ppid=57714] Meeseeks (N=5,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57964 ppid=57718] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57830 ppid=57717] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57830 ppid=57717] Meeseeks (N=5,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57964 ppid=57718] Meeseeks (N=5,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57875 ppid=57648] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57875 ppid=57648] Meeseeks (N=4,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57922 ppid=57650] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57922 ppid=57650] Meeseeks (N=4,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57878 ppid=57728] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57878 ppid=57728] Meeseeks (N=5,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57782 ppid=57716] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57782 ppid=57716] Meeseeks (N=5,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57926 ppid=57725] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57926 ppid=57725] Meeseeks (N=5,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57967 ppid=57729] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57967 ppid=57729] Meeseeks (N=5,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57762 ppid=57653] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57762 ppid=57653] Meeseeks (N=4,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57818 ppid=57712] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57818 ppid=57712] Meeseeks (N=5,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57784 ppid=57642] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57784 ppid=57642] Meeseeks (N=4,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57785 ppid=57642] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57785 ppid=57642] Meeseeks (N=4,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57876 ppid=57648] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57876 ppid=57648] Meeseeks (N=4,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57930 ppid=57721] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57930 ppid=57721] Meeseeks (N=5,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57725 ppid=57635] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57725 ppid=57635] Meeseeks (N=4,i=5) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57721 ppid=57632] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57879 ppid=57728] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57879 ppid=57728] Meeseeks (N=5,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57721 ppid=57632] Meeseeks (N=4,i=2) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57717 ppid=57631] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57717 ppid=57631] Meeseeks (N=4,i=1) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57836 ppid=57728] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57836 ppid=57728] Meeseeks (N=5,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57887 ppid=57644] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57887 ppid=57644] Meeseeks (N=4,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57787 ppid=57652] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57787 ppid=57652] Meeseeks (N=4,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57881 ppid=57718] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57881 ppid=57718] Meeseeks (N=5,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57653 ppid=57617] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57653 ppid=57617] Meeseeks (N=3,i=4) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57712 ppid=57640] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57712 ppid=57640] Meeseeks (N=4,i=1) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57792 ppid=57648] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57792 ppid=57648] Meeseeks (N=4,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57748 ppid=57727] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57741 ppid=57643] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57741 ppid=57643] Meeseeks (N=4,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57742 ppid=57719] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57742 ppid=57719] Meeseeks (N=5,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57791 ppid=57731] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57791 ppid=57731] Meeseeks (N=5,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57805 ppid=57639] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57805 ppid=57639] Meeseeks (N=4,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57796 ppid=57633] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57796 ppid=57633] Meeseeks (N=4,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57919 ppid=57719] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57919 ppid=57719] Meeseeks (N=5,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57858 ppid=57639] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57858 ppid=57639] Meeseeks (N=4,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57854 ppid=57641] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57854 ppid=57641] Meeseeks (N=4,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57808 ppid=57709] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57808 ppid=57709] Meeseeks (N=5,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57958 ppid=57715] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57958 ppid=57715] Meeseeks (N=5,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57950 ppid=57720] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57950 ppid=57720] Meeseeks (N=5,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57961 ppid=57720] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57961 ppid=57720] Meeseeks (N=5,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57966 ppid=57729] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57966 ppid=57729] Meeseeks (N=5,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57963 ppid=57714] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57963 ppid=57714] Meeseeks (N=5,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57855 ppid=57727] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57855 ppid=57727] Meeseeks (N=5,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57856 ppid=57639] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57856 ppid=57639] Meeseeks (N=4,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57860 ppid=57637] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57860 ppid=57637] Meeseeks (N=4,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57920 ppid=57642] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57920 ppid=57642] Meeseeks (N=4,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57918 ppid=57645] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57918 ppid=57645] Meeseeks (N=4,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57952 ppid=57707] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57952 ppid=57707] Meeseeks (N=5,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57907 ppid=57708] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57907 ppid=57708] Meeseeks (N=5,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57908 ppid=57708] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57908 ppid=57708] Meeseeks (N=5,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57949 ppid=57720] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57949 ppid=57720] Meeseeks (N=5,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57947 ppid=57722] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57947 ppid=57722] Meeseeks (N=5,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57906 ppid=57708] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57906 ppid=57708] Meeseeks (N=5,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57776 ppid=57657] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57776 ppid=57657] Meeseeks (N=4,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57839 ppid=57710] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57839 ppid=57710] Meeseeks (N=5,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57778 ppid=57729] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57778 ppid=57729] Meeseeks (N=5,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57835 ppid=57724] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57835 ppid=57724] Meeseeks (N=5,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57845 ppid=57658] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57845 ppid=57658] Meeseeks (N=4,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57774 ppid=57722] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57774 ppid=57722] Meeseeks (N=5,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57843 ppid=57658] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57843 ppid=57658] Meeseeks (N=4,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57898 ppid=57654] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57898 ppid=57654] Meeseeks (N=4,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57896 ppid=57654] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57896 ppid=57654] Meeseeks (N=4,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57939 ppid=57723] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57939 ppid=57723] Meeseeks (N=5,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57940 ppid=57719] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57940 ppid=57719] Meeseeks (N=5,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57941 ppid=57719] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57941 ppid=57719] Meeseeks (N=5,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57938 ppid=57647] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57938 ppid=57647] Meeseeks (N=4,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57841 ppid=57715] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57841 ppid=57715] Meeseeks (N=5,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57838 ppid=57710] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57838 ppid=57710] Meeseeks (N=5,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57936 ppid=57730] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57936 ppid=57730] Meeseeks (N=5,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57937 ppid=57647] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57937 ppid=57647] Meeseeks (N=4,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57748 ppid=57727] Meeseeks (N=5,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57644 ppid=57614] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57644 ppid=57614] Meeseeks (N=3,i=5) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57637 ppid=57614] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57637 ppid=57614] Meeseeks (N=3,i=1) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57793 ppid=57648] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57793 ppid=57648] Meeseeks (N=4,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57942 ppid=57719] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57942 ppid=57719] Meeseeks (N=5,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57714 ppid=57640] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57714 ppid=57640] Meeseeks (N=4,i=3) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57788 ppid=57642] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57788 ppid=57642] Meeseeks (N=4,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57849 ppid=57633] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57849 ppid=57633] Meeseeks (N=4,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57848 ppid=57633] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57848 ppid=57633] Meeseeks (N=4,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57851 ppid=57647] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57851 ppid=57647] Meeseeks (N=4,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57645 ppid=57617] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57645 ppid=57617] Meeseeks (N=3,i=1) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57905 ppid=57641] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57905 ppid=57641] Meeseeks (N=4,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57718 ppid=57631] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57718 ppid=57631] Meeseeks (N=4,i=2) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57720 ppid=57632] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57720 ppid=57632] Meeseeks (N=4,i=1) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57729 ppid=57631] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57729 ppid=57631] Meeseeks (N=4,i=5) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57944 ppid=57726] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57944 ppid=57726] Meeseeks (N=5,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57902 ppid=57638] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57902 ppid=57638] Meeseeks (N=4,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57801 ppid=57643] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57801 ppid=57643] Meeseeks (N=4,i=5) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57842 ppid=57650] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57842 ppid=57650] Meeseeks (N=4,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57746 ppid=57722] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57746 ppid=57722] Meeseeks (N=5,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57943 ppid=57722] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57943 ppid=57722] Meeseeks (N=5,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57715 ppid=57635] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57715 ppid=57635] Meeseeks (N=4,i=1) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57727 ppid=57640] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57727 ppid=57640] Meeseeks (N=4,i=4) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57707 ppid=57634] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57707 ppid=57634] Meeseeks (N=4,i=1) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57723 ppid=57632] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57723 ppid=57632] Meeseeks (N=4,i=3) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57719 ppid=57631] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57719 ppid=57631] Meeseeks (N=4,i=3) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57652 ppid=57618] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57652 ppid=57618] Meeseeks (N=3,i=3) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57728 ppid=57631] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57728 ppid=57631] Meeseeks (N=4,i=4) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57648 ppid=57618] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57648 ppid=57618] Meeseeks (N=3,i=2) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57710 ppid=57634] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57710 ppid=57634] Meeseeks (N=4,i=4) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57798 ppid=57708] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57798 ppid=57708] Meeseeks (N=5,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57794 ppid=57654] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57794 ppid=57654] Meeseeks (N=4,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57795 ppid=57633] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57795 ppid=57633] Meeseeks (N=4,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57750 ppid=57651] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57750 ppid=57651] Meeseeks (N=4,i=2) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57751 ppid=57651] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57751 ppid=57651] Meeseeks (N=4,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57752 ppid=57651] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57752 ppid=57651] Meeseeks (N=4,i=4) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57731 ppid=57640] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57731 ppid=57640] Meeseeks (N=4,i=5) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57647 ppid=57617] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57647 ppid=57617] Meeseeks (N=3,i=3) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57640 ppid=57614] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57640 ppid=57614] Meeseeks (N=3,i=4) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57730 ppid=57632] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57730 ppid=57632] Meeseeks (N=4,i=5) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57783 ppid=57716] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57783 ppid=57716] Meeseeks (N=5,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57657 ppid=57618] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57657 ppid=57618] Meeseeks (N=3,i=4) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57643 ppid=57618] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57643 ppid=57618] Meeseeks (N=3,i=1) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57650 ppid=57616] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57650 ppid=57616] Meeseeks (N=3,i=4) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57658 ppid=57618] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57658 ppid=57618] Meeseeks (N=3,i=5) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57955 ppid=57726] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57955 ppid=57726] Meeseeks (N=5,i=3) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57802 ppid=57641] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57802 ppid=57641] Meeseeks (N=4,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57722 ppid=57635] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57722 ppid=57635] Meeseeks (N=4,i=3) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57807 ppid=57709] ¡CAOS EVITADO! Llego al límite (N=5). No creo más Meeseeks.
+[pid=57807 ppid=57709] Meeseeks (N=5,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57804 ppid=57639] ¡CAOS EVITADO! Llego al límite (N=4). No creo más Meeseeks.
+[pid=57804 ppid=57639] Meeseeks (N=4,i=1) declara tarea imposible por seguridad. ¡Adiós! *desaparece*
+[pid=57724 ppid=57635] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57724 ppid=57635] Meeseeks (N=4,i=4) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57642 ppid=57616] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57642 ppid=57616] Meeseeks (N=3,i=2) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57639 ppid=57614] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57639 ppid=57614] Meeseeks (N=3,i=3) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57618 ppid=57574] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57618 ppid=57574] Meeseeks (N=2,i=5) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57638 ppid=57614] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57638 ppid=57614] Meeseeks (N=3,i=2) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57633 ppid=57613] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57633 ppid=57613] Meeseeks (N=3,i=3) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57651 ppid=57616] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57651 ppid=57616] Meeseeks (N=3,i=5) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57631 ppid=57613] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57631 ppid=57613] Meeseeks (N=3,i=1) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57716 ppid=57635] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57716 ppid=57635] Meeseeks (N=4,i=2) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57708 ppid=57634] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57708 ppid=57634] Meeseeks (N=4,i=2) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57654 ppid=57617] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57654 ppid=57617] Meeseeks (N=3,i=5) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57641 ppid=57616] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57641 ppid=57616] Meeseeks (N=3,i=1) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57726 ppid=57632] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57726 ppid=57632] Meeseeks (N=4,i=4) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57632 ppid=57613] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57632 ppid=57613] Meeseeks (N=3,i=2) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57614 ppid=57574] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57614 ppid=57574] Meeseeks (N=2,i=2) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57616 ppid=57574] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57616 ppid=57574] Meeseeks (N=2,i=3) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57635 ppid=57613] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57635 ppid=57613] Meeseeks (N=3,i=5) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57617 ppid=57574] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57617 ppid=57574] Meeseeks (N=2,i=4) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57709 ppid=57634] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57709 ppid=57634] Meeseeks (N=4,i=3) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57634 ppid=57613] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57634 ppid=57613] Meeseeks (N=3,i=4) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57613 ppid=57574] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57613 ppid=57574] Meeseeks (N=2,i=1) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+[pid=57574 ppid=57086] Ningún hijo lo logró. Reporto fracaso hacia arriba...
+[pid=57574 ppid=57086] Meeseeks (N=1,i=1) no se pudo cumplir la misión. ¡Adiós! *desaparece*
+Box al usuario: Solicitud #1 NO se pudo completar. ni con 5 ayudantes (N=1) se logró 'Quiero ser omnipotente'
+  Tiempos: wall=16.881s sim=211.175s real=0.000s | Meeseeks usados: 281
+
+--- Solicitud #2 ---
+Tipo [A/B/C o salir]: 
+================ INFORME FINAL DEL BOX ================
+Tareas solicitadas: 1
+Completadas: 0 | No completadas: 1
+Meeseeks totales creados: 281 | Nivel máximo: 5
+--------------------------------------------------------
+#1 [A] 'Quiero ser omnipotente'
+    dificultad=0.00
+    resultado=FRACASO | wall=16.881s sim=211.175s real=0.000s (sin sim)
+    meeseeks=281
+    detalle: ni con 5 ayudantes (N=1) se logró 'Quiero ser omnipotente'
+========================================================
+Box terminado. ¡Adiós!
